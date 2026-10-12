@@ -198,7 +198,6 @@ window.SITE = {
         { src: "assets/projects/testmind/dashboard-api-coverage.jpg", alt: "پوشش API" },
       ],
       github: "https://github.com/AAli-gh/AI-Powered-Software-Testing-Platform",
-      private: true,
       demo: "",
     },
     {
@@ -233,7 +232,6 @@ window.SITE = {
         { src: "assets/projects/perfume/m-home.jpg", alt: "نسخه موبایل" },
       ],
       github: "https://github.com/AAli-gh/perfume",
-      private: true,
       demo: "",
     },
     {
@@ -271,7 +269,6 @@ window.SITE = {
       status: { label: "در آغاز راه", type: "draft" },
       art: "wave",
       github: "https://github.com/AAli-gh/IT-learning",
-      private: true,
       demo: "",
     },
     {
@@ -294,7 +291,6 @@ window.SITE = {
       status: { label: "در حال توسعه", type: "wip" },
       art: "graph",
       github: "https://github.com/AAli-gh/shop2",
-      private: true,
       demo: "",
     },
     {
@@ -316,7 +312,6 @@ window.SITE = {
       status: { label: "تکمیل‌شده", type: "done" },
       art: "chart",
       github: "https://github.com/AAli-gh/Hamechi_shop",
-      private: true,
       demo: "",
     },
     {
@@ -338,7 +333,6 @@ window.SITE = {
       status: { label: "تکمیل‌شده", type: "done" },
       art: "bars",
       github: "https://github.com/AAli-gh/Persian-Baby-Shop",
-      private: true,
       demo: "",
     },
     {
