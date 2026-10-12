@@ -50,7 +50,7 @@
     { key: "resume", href: "resume.html", label: "رزومه", icon: "fa-file-lines" },
     { key: "contact", href: "contact.html", label: "تماس", icon: "fa-envelope" },
   ];
-  var ALIAS = { "project-bitcoin-ai": "projects", article: "articles", "": "index" };
+  var ALIAS = { project: "projects", article: "articles", "": "index" };
 
   function currentKey() {
     var last = location.pathname.split("/").pop().replace(/\.html$/, "");
@@ -232,7 +232,9 @@
     var primary = p.page || "project.html?id=" + encodeURIComponent(p.id);
     var view = '<a class="btn btn-primary btn-sm" href="' + esc(primary) + '">مشاهده پروژه <i class="fa-solid fa-arrow-left" aria-hidden="true"></i></a>';
     var gh = p.github
-      ? '<a class="btn btn-ghost btn-sm" href="' + esc(p.github) + '"' + EXT + ' aria-label="GitHub — ' + esc(p.title) + '"><i class="fa-brands fa-github" aria-hidden="true"></i> GitHub</a>'
+      ? (p.private
+        ? '<span class="btn btn-ghost btn-sm is-disabled" aria-disabled="true" title="مخزن خصوصی است"><i class="fa-solid fa-lock" aria-hidden="true"></i> Private</span>'
+        : '<a class="btn btn-ghost btn-sm" href="' + esc(p.github) + '"' + EXT + ' aria-label="GitHub — ' + esc(p.title) + '"><i class="fa-brands fa-github" aria-hidden="true"></i> GitHub</a>')
       : "";
     var demo = p.demo
       ? '<a class="btn btn-ghost btn-sm" href="' + esc(p.demo) + '"' + (/^https?:/.test(p.demo) ? EXT : "") + '><i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i> Live Demo</a>'

@@ -60,7 +60,8 @@
       if (canon) canon.setAttribute("href", S.siteUrl + "project.html?id=" + encodeURIComponent(p.id));
       var links = "";
       if (p.demo) links += '<a class="btn btn-primary" href="' + UI.esc(p.demo) + '"' + (/^https?:/.test(p.demo) ? ' target="_blank" rel="noopener noreferrer"' : "") + '><i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i> مشاهده دمو</a>';
-      if (p.github) links += '<a class="btn btn-ghost" href="' + UI.esc(p.github) + '" target="_blank" rel="noopener noreferrer"><i class="fa-brands fa-github" aria-hidden="true"></i> GitHub</a>';
+      if (p.github && !p.private) links += '<a class="btn btn-ghost" href="' + UI.esc(p.github) + '" target="_blank" rel="noopener noreferrer"><i class="fa-brands fa-github" aria-hidden="true"></i> GitHub</a>';
+      if (p.github && p.private) links += '<span class="btn btn-ghost is-disabled" aria-disabled="true"><i class="fa-solid fa-lock" aria-hidden="true"></i> مخزن خصوصی</span>';
       var hero = p.cover
         ? '<img src="' + UI.esc(p.cover) + '" alt="' + UI.esc(p.title) + '" class="block w-full h-auto">'
         : UI.artSvg(p.art, p.id);

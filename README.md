@@ -5,9 +5,8 @@
 ## ساختار
 
 ```
-├── index.html · about.html · projects.html · project-bitcoin-ai.html
+├── index.html · about.html · projects.html · 
 ├── project.html           جزئیات عمومی پروژه‌ها (?id=)
-├── demos/storefront/      دمو زندهٔ قالب فروشگاه (استاتیک)
 ├── articles.html · article.html · resume.html · contact.html
 ├── css/style.css            توکن‌های طراحی (Light/Dark) و کامپوننت‌ها
 ├── js/
