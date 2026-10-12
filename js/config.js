@@ -369,8 +369,7 @@ window.SITE = {
         { src: "assets/projects/2042-game/landscape.jpg", alt: "حالت افقی" },
       ],
       github: "https://github.com/AAli-gh/2042-game",
-      private: true,
-      demo: "",
+      demo: "demos/2042-game/index.html",
     },
   ],
 
