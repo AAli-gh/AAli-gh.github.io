@@ -33,15 +33,12 @@
       <div class="container-x">
         <nav class="crumbs" aria-label="مسیر"><a href="index.html">خانه</a><span aria-hidden="true">/</span><a href="projects.html">پروژه‌ها</a><span aria-hidden="true">/</span><span aria-current="page" class="ltr">Bitcoin AI</span></nav>
         <div class="mt-6 flex flex-wrap items-center gap-4">
-          <span class="status status--done">تکمیل‌شده</span>
+          <span class="status status--wip">در حال پژوهش</span>
           <span class="tag">Machine Learning</span><span class="tag">Data Science</span>
         </div>
         <h1 class="h1 mt-3 ltr" dir="ltr" style="display:block;text-align:right">Bitcoin AI Prediction System</h1>
         <p class="lead mt-4">سیستم تحلیل و پیش‌بینی بازار بیت‌کوین با استفاده از داده‌های تاریخی، Feature Engineering و مدل‌های Machine Learning.</p>
-        <div class="mt-7 flex flex-wrap gap-3">
-          <a class="btn btn-primary" data-href="project:bitcoin-ai:github"><i class="fa-brands fa-github" aria-hidden="true"></i> کد روی GitHub</a>
-          <a class="btn btn-ghost" data-href="project:bitcoin-ai:demo"><i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i> Live Demo</a>
-        </div>
+
       </div>
     </header>
 
@@ -96,11 +93,12 @@ scores = []
         </section>
 
         <section aria-labelledby="learn">
-          <h2 id="learn" class="h2">آموخته‌ها</h2>
+          <h2 id="learn" class="h2">یافته‌ها</h2>
           <ul class="prose-fa mt-4">
-            <li>یک baseline ساده (مثلاً «قیمت فردا = قیمت امروز») معیار واقعی موفقیت است.</li>
-            <li>اعتبارسنجی تصادفی در سری زمانی گمراه‌کننده است؛ تقسیم باید زمانی باشد.</li>
-            <li>پیچیدگی مدل کمتر از کیفیت ویژگی‌ها و صحت ارزیابی اهمیت دارد.</li>
+            <li><strong class="text-ink">دقت یعنی سود نیست:</strong> مدل XGBoost بهینه‌شده به ۵۳٫۳٪ دقت در افق ۱ ساعته رسید، اما میانگین سود (+۰٫۲۸٪) از میانگین ضرر (−۰٫۳۳٪) کمتر است و با هزینه معامله زیان می‌دهد.</li>
+            <li><strong class="text-ink">احتمال‌های خام بیش‌ازحد مطمئن‌اند:</strong> خطای کالیبراسیون ۰٫۰۸۹ تا ۰٫۱۶۰ بود که با Isotonic Calibration به ۰٫۰۱۷ تا ۰٫۰۳۵ رسید.</li>
+            <li><strong class="text-ink">هیچ پیکربندی هنوز قابل معامله نیست:</strong> از ۴۵ سلول گرید، ۱۳ مورد Sharpe مثبت داشتند که در حد شانس است؛ نتیجه فعلاً «لبهٔ آماری معتبر نداریم».</li>
+            <li><strong class="text-ink">یک الگوی قابل پیگیری:</strong> با بالا رفتن آستانهٔ اطمینان، Profit Factor و نرخ برد به‌صورت یکنواخت افزایش می‌یابد؛ نیازمند تأیید روی داده‌ای است که برای یافتن آن استفاده نشده.</li>
           </ul>
           <p class="mt-6 rounded-xl border border-line bg-surface-2 px-4 py-3 text-sm text-muted"><i class="fa-solid fa-circle-info text-accent me-2" aria-hidden="true"></i>این پروژه صرفاً آموزشی و پژوهشی است و توصیهٔ مالی یا سرمایه‌گذاری محسوب نمی‌شود.</p>
         </section>
@@ -111,14 +109,14 @@ scores = []
           <div class="card card-static p-5">
             <h2 class="font-bold">تکنولوژی‌ها</h2>
             <ul class="mt-4 flex flex-wrap gap-1.5">
-              <li class="chip">Python</li><li class="chip">Pandas</li><li class="chip">NumPy</li><li class="chip">Scikit-learn</li><li class="chip">Machine Learning</li>
+              <li class="chip">Python</li><li class="chip">Pandas</li><li class="chip">NumPy</li><li class="chip">Scikit-learn</li><li class="chip">XGBoost</li><li class="chip">Machine Learning</li>
             </ul>
           </div>
           <div class="card card-static p-5">
             <h2 class="font-bold">خلاصه پروژه</h2>
             <dl class="mt-3 text-sm">
               <div class="flex justify-between py-2 border-b border-line"><dt class="text-muted">نوع</dt><dd>Time-series ML</dd></div>
-              <div class="flex justify-between py-2 border-b border-line"><dt class="text-muted">وضعیت</dt><dd>تکمیل‌شده</dd></div>
+              <div class="flex justify-between py-2 border-b border-line"><dt class="text-muted">وضعیت</dt><dd>در حال پژوهش</dd></div>
               <div class="flex justify-between py-2"><dt class="text-muted">اعتبارسنجی</dt><dd class="mono text-xs">TimeSeriesSplit</dd></div>
             </dl>
           </div>

@@ -229,21 +229,20 @@
   /* Cards                                                               */
   /* ------------------------------------------------------------------ */
   function projectCard(p, idx) {
-    var primary = p.page || p.github || "";
-    var primaryExt = !p.page && primary ? EXT : "";
-    var view = primary
-      ? '<a class="btn btn-primary btn-sm" href="' + esc(primary) + '"' + primaryExt + ">مشاهده پروژه <i class=\"fa-solid fa-arrow-left\" aria-hidden=\"true\"></i></a>"
-      : "";
+    var primary = p.page || "project.html?id=" + encodeURIComponent(p.id);
+    var view = '<a class="btn btn-primary btn-sm" href="' + esc(primary) + '">مشاهده پروژه <i class="fa-solid fa-arrow-left" aria-hidden="true"></i></a>';
     var gh = p.github
       ? '<a class="btn btn-ghost btn-sm" href="' + esc(p.github) + '"' + EXT + ' aria-label="GitHub — ' + esc(p.title) + '"><i class="fa-brands fa-github" aria-hidden="true"></i> GitHub</a>'
       : "";
     var demo = p.demo
-      ? '<a class="btn btn-ghost btn-sm" href="' + esc(p.demo) + '"' + EXT + '><i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i> Live Demo</a>'
-      : '<span class="btn btn-ghost btn-sm is-disabled" aria-disabled="true" title="دموی زنده به‌زودی اضافه می‌شود"><i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i> Live Demo</span>';
+      ? '<a class="btn btn-ghost btn-sm" href="' + esc(p.demo) + '"' + (/^https?:/.test(p.demo) ? EXT : "") + '><i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i> Live Demo</a>'
+      : "";
     var st = p.status || {};
     return (
       '<article class="card project-card flex flex-col reveal" data-categories="' + esc((p.categories || []).join("|")) + '">' +
-      '<div class="art">' + artSvg(p.art, p.id) + "</div>" +
+      '<div class="art">' + (p.cover
+        ? '<img src="' + esc(p.cover) + '" alt="' + esc(p.title) + '" loading="lazy" decoding="async" class="block w-full object-cover object-top" style="aspect-ratio:400/220">'
+        : artSvg(p.art, p.id)) + "</div>" +
       '<div class="flex flex-col gap-3 p-5 flex-1">' +
       '<div class="flex items-center justify-between"><span class="status status--' + esc(st.type || "draft") + '">' + esc(st.label || "") +
       '</span><span class="num">' + String((idx || 0) + 1).padStart(2, "0") + "</span></div>" +

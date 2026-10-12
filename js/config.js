@@ -168,8 +168,9 @@ window.SITE = {
   ],
 
   /* ---------- پروژه‌ها ---------- */
-  // art: نوع تصویر تولیدی (chart | graph | bars | logs | wave)
-  // page: صفحه جزئیات داخلی (اختیاری) — github / demo: لینک‌ها (خالی = غیرفعال)
+  // art: نوع تصویر تولیدی (chart | graph | bars | logs | wave) — یا cover: مسیر تصویر واقعی
+  // page: صفحه جزئیات اختصاصی (اختیاری)؛ در غیر این صورت project.html?id=<id>
+  // images: گالری تصاویر · highlights: نکات کلیدی · github / demo: لینک‌ها (خالی = مخفی / غیرفعال)
   projects: [
     {
       id: "bitcoin-ai",
@@ -177,11 +178,11 @@ window.SITE = {
       summary:
         "سیستم تحلیل و پیش‌بینی بازار بیت‌کوین با استفاده از داده‌های تاریخی، Feature Engineering و مدل‌های Machine Learning.",
       categories: ["Machine Learning", "Data Science"],
-      stack: ["Python", "Pandas", "NumPy", "Scikit-learn", "Machine Learning"],
-      status: { label: "تکمیل‌شده", type: "done" },
+      stack: ["Python", "Pandas", "NumPy", "Scikit-learn", "XGBoost", "Machine Learning"],
+      status: { label: "در حال پژوهش", type: "wip" },
       art: "chart",
       page: "project-bitcoin-ai.html",
-      github: "https://github.com/AAli-gh/bitcoin-ai-prediction",
+      github: "",
       demo: "",
     },
     {
@@ -193,26 +194,143 @@ window.SITE = {
       stack: ["Python", "Scikit-learn", "Django", "PostgreSQL"],
       status: { label: "در حال توسعه", type: "wip" },
       art: "logs",
-      page: "",
-      github: "https://github.com/AAli-gh/ai-log-detective",
+      github: "",
       demo: "",
     },
     {
-      id: "placeholder-project",
-      title: "پروژه نمونه — نام پروژه شما",
+      id: "storefront",
+      title: "VimaShop — فروشگاه لوازم یدکی خودرو",
       summary:
-        "این کارت یک Placeholder است. عنوان، توضیح، تکنولوژی‌ها و لینک‌ها را از فایل js/config.js تغییر دهید.",
-      categories: ["Backend", "Data Science"],
-      stack: ["Python", "Django REST", "Docker"],
-      status: { label: "نمونه", type: "draft" },
+        "قالب کامل فروشگاه لوازم یدکی خودرو با ۲۲ صفحه فارسی و راست‌چین: جست‌وجوی قطعه، سبد خرید، تسویه‌حساب، پروفایل کاربر و وبلاگ.",
+      description: [
+        "یک قالب فروشگاهی بدون Build با HTML، Tailwind CSS و Alpine.js. تمام صفحات اصلی یک فروشگاه اینترنتی طراحی شده‌اند و می‌توانید همین حالا در مرورگر آن‌ها را مرور کنید.",
+      ],
+      highlights: [
+        "۲۲ صفحه: خانه، محصولات، دسته‌بندی، جزئیات محصول، وبلاگ، سبد، تسویه‌حساب و …",
+        "پنل کاربری: داشبورد، سفارش‌ها، آدرس‌ها، علاقه‌مندی‌ها و تنظیمات",
+        "تعاملات سبک با Alpine.js بدون Build Step",
+        "کاملاً RTL با فونت Vazirmatn",
+      ],
+      categories: ["Web & Design"],
+      stack: ["HTML", "Tailwind CSS", "Alpine.js", "RTL"],
+      status: { label: "تکمیل‌شده", type: "done" },
+      art: "bars",
+      github: "",
+      demo: "demos/storefront/index.html",
+    },
+    {
+      id: "kalameh",
+      title: "کلمه (Kalameh) — قالب مجله فناوری وردپرس",
+      summary:
+        "قالب وردپرس فارسی و راست‌چین برای مجله‌های فناوری با طراحی شیشه‌ای، حالت تاریک و امکانات ویژهٔ محتوای فنی.",
+      description: [
+        "قالب کلاسیک وردپرس (PHP) برای مجله‌های فناوری؛ بدون Page Builder و بدون Build Step. داده‌های دمو ساختگی هستند.",
+      ],
+      highlights: [
+        "طراحی Glassmorphism با حالت تاریک بدون پرش هنگام بارگذاری",
+        "رنگ‌بندی کد با Prism (۲۱ زبان) و دکمه کپی",
+        "انواع مطلب: خبر، آموزش و نقد و بررسی با امتیاز، نقاط قوت و ضعف",
+        "سری‌های آموزشی، فهرست مطالب خودکار، تاریخ شمسی و خبرنامه",
+        "فونت وزیرمتن به‌صورت محلی و کاملاً واکنش‌گرا",
+      ],
+      categories: ["Web & Design"],
+      stack: ["WordPress", "PHP", "JavaScript", "CSS", "Prism.js"],
+      status: { label: "تکمیل‌شده", type: "done" },
+      cover: "assets/projects/kalameh/home.jpg",
+      images: [
+        { src: "assets/projects/kalameh/home-dark.jpg", alt: "صفحه اول — حالت تاریک" },
+        { src: "assets/projects/kalameh/home.jpg", alt: "صفحه اول" },
+        { src: "assets/projects/kalameh/tutorial.jpg", alt: "مطلب آموزشی" },
+        { src: "assets/projects/kalameh/review.jpg", alt: "نقد و بررسی" },
+        { src: "assets/projects/kalameh/mobile.jpg", alt: "نسخه موبایل" },
+      ],
+      github: "",
+      demo: "",
+    },
+    {
+      id: "shop2",
+      title: "shop2 — فروشگاه اینترنتی با Django",
+      summary:
+        "فروشگاه محصولات فیزیکی با رابط فارسی و راست‌چین؛ Django 5 + DRF، لایه سرویس، HTMX و Tailwind v4.",
+      description: [
+        "یک فروشگاه اینترنتی کامل با معماری لایه‌ای: منطق کسب‌وکار در services.py هر اپ، API با DRF و رابط کاربری سمت سرور با Django Templates و HTMX.",
+      ],
+      highlights: [
+        "Django 5.2 + Django REST Framework با لایه سرویس در هر اپ",
+        "Django Templates + HTMX 2 + Tailwind CSS v4 (Standalone CLI)",
+        "SQLite در توسعه و PostgreSQL با یک متغیر محیطی",
+        "درگاه پرداخت شبیه‌ساز با امکان جایگزینی با زرین‌پال",
+      ],
+      categories: ["Backend", "Web & Design"],
+      stack: ["Python", "Django", "DRF", "HTMX", "Tailwind", "PostgreSQL"],
+      status: { label: "در حال توسعه", type: "wip" },
       art: "graph",
-      page: "",
-      github: "https://github.com/AAli-gh/your-project",
+      github: "",
+      demo: "",
+    },
+    {
+      id: "electronics-shop",
+      title: "Persian Electronics Shop",
+      summary:
+        "فروشگاه لوازم الکترونیکی فارسی و RTL با Django و Tailwind؛ شامل سبد خرید، سفارش‌ها، فروشندگان و داشبورد.",
+      description: [
+        "پروژهٔ فروشگاهی چندبخشی با اپ‌های جدا برای حساب کاربری، محصولات، سبد خرید، سفارش‌ها، فروشندگان و داشبورد مدیریتی.",
+      ],
+      highlights: [
+        "اپ‌های مستقل: accounts، products، cart، orders، sellers، dashboard",
+        "رابط RTL با Tailwind CSS و Build با PostCSS",
+        "مدل داده و مهاجرت‌های Django",
+      ],
+      categories: ["Backend", "Web & Design"],
+      stack: ["Python", "Django", "Tailwind CSS", "SQLite"],
+      status: { label: "نمونه", type: "draft" },
+      art: "wave",
+      github: "",
+      demo: "",
+    },
+    {
+      id: "bazarcheh",
+      title: "بازارچه (Bazarcheh) — فروشگاه Full-stack",
+      summary:
+        "فروشگاه اینترنتی فارسی و RTL با ویترین مشتری و پنل مدیریت؛ مونوریپوی TypeScript با Express، PostgreSQL و React.",
+      description: [
+        "یک مونوریپوی pnpm شامل سرور API، فروشگاه و پنل مدیریت. قرارداد API با OpenAPI نوشته می‌شود و هوک‌ها و اسکیماهای Zod به‌صورت خودکار تولید می‌شوند.",
+      ],
+      highlights: [
+        "دسته‌بندی چندسطحی، جست‌وجوی فارسی، مقایسه و علاقه‌مندی‌ها",
+        "سبد خرید، کد تخفیف، پیگیری سفارش، فاکتور و مرجوعی",
+        "پنل مدیریت: محصولات، سفارش‌ها، موجودی، تخفیف‌ها و گزارش‌ها",
+        "Express 5 + Drizzle ORM + PostgreSQL و React 19 + Vite",
+      ],
+      categories: ["Backend", "Web & Design"],
+      stack: ["TypeScript", "React", "Express", "PostgreSQL", "Drizzle", "OpenAPI"],
+      status: { label: "در حال توسعه", type: "wip" },
+      art: "graph",
+      github: "",
+      demo: "",
+    },
+    {
+      id: "itmag-errors",
+      title: "ITMAG — صفحات خطای آینده‌نگر",
+      summary:
+        "مجموعه طراحی ۱۰ صفحه خطا (۴۰۱، ۴۰۳، ۴۰۴، ۴۲۹، ۵۰۰، ۵۰۳، ۵۰۴ و …) برای مجله فناوری با زبان بصری سایبرپانک.",
+      description: [
+        "طراحی یکپارچهٔ صفحات خطای HTTP برای یک مجلهٔ فناوری فارسی؛ هر صفحه با همان هویت بصری و لحن مجله.",
+      ],
+      highlights: ["۱۰ صفحه خطا با زبان بصری یکسان", "مناسب استفاده در قالب‌های وب و وردپرس"],
+      categories: ["Web & Design"],
+      stack: ["UI Design", "Visual Identity"],
+      status: { label: "تکمیل‌شده", type: "done" },
+      cover: "assets/projects/itmag-errors/error-01.jpg",
+      images: [1,2,3,4,5,6,7,8,9,10].map(function (n) {
+        return { src: "assets/projects/itmag-errors/error-" + (n < 10 ? "0" : "") + n + ".jpg", alt: "صفحه خطا " + n };
+      }),
+      github: "",
       demo: "",
     },
   ],
 
-  projectCategories: ["Machine Learning", "AI Systems", "Data Science", "Backend"],
+  projectCategories: ["Machine Learning", "AI Systems", "Data Science", "Backend", "Web & Design"],
 
   /* ---------- مقالات (نمونه) ---------- */
   articleCategories: [

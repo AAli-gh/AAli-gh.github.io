@@ -6,6 +6,8 @@
 
 ```
 ├── index.html · about.html · projects.html · project-bitcoin-ai.html
+├── project.html           جزئیات عمومی پروژه‌ها (?id=)
+├── demos/storefront/      دمو زندهٔ قالب فروشگاه (استاتیک)
 ├── articles.html · article.html · resume.html · contact.html
 ├── css/style.css            توکن‌های طراحی (Light/Dark) و کامپوننت‌ها
 ├── js/
@@ -29,7 +31,7 @@
 | `name`, `role`, `tagline` | نام، عنوان و معرفی Hero |
 | `email`, `github`, `linkedin`, `telegram` | لینک‌های ارتباطی (فعلاً Placeholder) |
 | `siteUrl` | آدرس نهایی سایت (برای Canonical مقالات) |
-| `projects` | پروژه‌ها؛ `github` / `demo` / `page` — لینک خالی = دکمهٔ غیرفعال |
+| `projects` | پروژه‌ها؛ `cover` / `images` / `highlights` / `github` / `demo` — لینک خالی = دکمه نمایش داده نمی‌شود؛ جزئیات در `project.html?id=` |
 | `articles` | مقالات؛ هر مقاله با `article.html?id=<id>` باز می‌شود |
 | `skills`, `timeline`, `resume` | مهارت‌ها، مسیر حرفه‌ای و رزومه |
 | `resumePdf` | مثلاً `"assets/resume.pdf"`؛ اگر خالی باشد دکمهٔ رزومه همان صفحه را چاپ/ذخیره به PDF می‌کند |
