@@ -1,0 +1,138 @@
+<!doctype html>
+<html lang="fa" dir="rtl">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>درباره من | علی — AI Engineer &amp; Python Developer</title>
+  <meta name="description" content="آشنایی با مسیر یادگیری، مهارت‌ها، اهداف حرفه‌ای و علاقه‌مندی‌های فنی یک مهندس هوش مصنوعی و توسعه‌دهنده پایتون.">
+  <link rel="canonical" href="https://aali-gh.github.io/about.html">
+  <meta property="og:type" content="profile">
+  <meta property="og:locale" content="fa_IR">
+  <meta property="og:title" content="درباره من | علی">
+  <meta property="og:description" content="مسیر یادگیری، مهارت‌ها و اهداف حرفه‌ای.">
+  <meta property="og:url" content="https://aali-gh.github.io/about.html">
+  <meta property="og:image" content="https://aali-gh.github.io/assets/images/og-cover.svg">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="theme-color" content="#f7f8fb">
+  <link rel="icon" href="assets/icons/favicon.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Vazirmatn:wght@300;400;500;600;700;800&amp;family=JetBrains+Mono:wght@400;500&amp;display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" crossorigin="anonymous" referrerpolicy="no-referrer">
+  <script>(function(){var d=document.documentElement;d.classList.add("js");try{if(localStorage.getItem("theme")==="dark")d.classList.add("dark")}catch(e){}})();</script>
+  <script src="https://cdn.tailwindcss.com/3.4.16"></script>
+  <script src="js/tailwind-config.js"></script>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <a href="#main" class="skip-link">پرش به محتوای اصلی</a>
+  <div id="header-mount"></div>
+
+  <main id="main">
+    <header class="page-hero">
+      <div class="container-x">
+        <nav class="crumbs" aria-label="مسیر"><a href="index.html">خانه</a><span aria-hidden="true">/</span><span aria-current="page">درباره من</span></nav>
+        <p class="eyebrow mt-6">about</p>
+        <h1 class="h1 mt-2">درباره من</h1>
+      </div>
+    </header>
+
+    <!-- Intro -->
+    <section class="section pt-6" aria-labelledby="intro-title">
+      <div class="container-x grid gap-10 lg:grid-cols-12">
+        <aside class="lg:col-span-4">
+          <div class="card card-static p-5 reveal lg:sticky lg:top-24">
+            <div class="avatar" role="img" aria-label="جای‌گذاری تصویر شخصی">
+              <svg viewBox="0 0 200 200" class="absolute inset-0 w-full h-full" aria-hidden="true">
+                <g style="stroke:rgb(var(--ink)/.08)" stroke-width="1">
+                  <path d="M0 40h200M0 80h200M0 120h200M0 160h200M40 0v200M80 0v200M120 0v200M160 0v200"/>
+                </g>
+                <circle cx="100" cy="100" r="62" fill="none" style="stroke:rgb(var(--accent)/.5)" stroke-dasharray="3 6"/>
+              </svg>
+              <span class="relative text-6xl font-extrabold text-accent" aria-hidden="true" id="avatar-initial">A</span>
+            </div>
+            <h2 class="mt-5 text-lg font-bold" data-bind="name"></h2>
+            <p class="mono text-xs text-muted ltr" dir="ltr" data-bind="role"></p>
+            <dl class="mt-4" data-render="facts"></dl>
+            <div class="mt-5 flex flex-wrap gap-2">
+              <a class="btn btn-primary btn-sm" href="contact.html">تماس</a>
+              <a class="btn btn-ghost btn-sm" href="resume.html">رزومه</a>
+            </div>
+          </div>
+        </aside>
+
+        <div class="lg:col-span-8">
+          <p class="eyebrow reveal">01 · intro</p>
+          <h2 id="intro-title" class="h2 mt-3 reveal" data-about-lead></h2>
+          <div class="prose-fa mt-6 text-muted reveal" data-render="bio"></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Timeline -->
+    <section class="section border-t border-line" aria-labelledby="path-title">
+      <div class="container-x grid gap-10 lg:grid-cols-12">
+        <div class="lg:col-span-4">
+          <p class="eyebrow reveal">02 · path</p>
+          <h2 id="path-title" class="h2 mt-3 reveal">مسیر یادگیری و حرفه‌ای</h2>
+          <p class="sub mt-3 reveal">از دانشگاه تا پروژه‌های واقعی؛ مراحلی که مسیر امروز مرا ساخته‌اند.</p>
+        </div>
+        <div class="lg:col-span-8">
+          <ol class="timeline" data-render="timeline"></ol>
+        </div>
+      </div>
+    </section>
+
+    <!-- Skills -->
+    <section class="section border-t border-line" aria-labelledby="skills-title">
+      <div class="container-x">
+        <div class="section-head">
+          <p class="eyebrow reveal">03 · skills</p>
+          <h2 id="skills-title" class="h2 reveal">مهارت‌ها</h2>
+          <p class="sub reveal">دسته‌بندی ابزارها و تکنولوژی‌هایی که روزانه با آن‌ها کار می‌کنم.</p>
+        </div>
+        <div class="grid gap-5 md:grid-cols-2 lg:grid-cols-3" data-render="skills"></div>
+      </div>
+    </section>
+
+    <!-- Goals -->
+    <section class="section border-t border-line" aria-labelledby="goals-title">
+      <div class="container-x">
+        <div class="section-head">
+          <p class="eyebrow reveal">04 · goals</p>
+          <h2 id="goals-title" class="h2 reveal">اهداف حرفه‌ای</h2>
+        </div>
+        <div class="grid gap-5 md:grid-cols-3" data-render="goals"></div>
+      </div>
+    </section>
+
+    <!-- Interests -->
+    <section class="section border-t border-line" aria-labelledby="int-title">
+      <div class="container-x">
+        <div class="section-head">
+          <p class="eyebrow reveal">05 · interests</p>
+          <h2 id="int-title" class="h2 reveal">علاقه‌مندی‌های تکنولوژیک</h2>
+        </div>
+        <ul class="flex flex-wrap gap-3" data-render="interests"></ul>
+      </div>
+    </section>
+  </main>
+
+  <div id="footer-mount"></div>
+
+  <script src="js/config.js" defer></script>
+  <script src="js/components.js" defer></script>
+  <script src="js/theme.js" defer></script>
+  <script src="js/main.js" defer></script>
+  <script>
+    // About page: bind the lead text and avatar initial from the config (runs after config.js, deferred order is preserved)
+    window.addEventListener("DOMContentLoaded", function () {
+      var S = window.SITE || {};
+      var lead = document.querySelector("[data-about-lead]");
+      if (lead && S.about) lead.textContent = S.about.lead;
+      var ini = document.getElementById("avatar-initial");
+      if (ini && S.nameEn) ini.textContent = S.nameEn.charAt(0).toUpperCase();
+    });
+  </script>
+</body>
+</html>

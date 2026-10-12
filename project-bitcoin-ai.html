@@ -1,0 +1,145 @@
+<!doctype html>
+<html lang="fa" dir="rtl">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Bitcoin AI Prediction System | پروژه‌ها — علی</title>
+  <meta name="description" content="مطالعهٔ موردی: سیستم تحلیل و پیش‌بینی بازار بیت‌کوین با داده‌های تاریخی، Feature Engineering و مدل‌های Machine Learning با Python و Scikit-learn.">
+  <link rel="canonical" href="https://aali-gh.github.io/project-bitcoin-ai.html">
+  <meta property="og:type" content="article">
+  <meta property="og:locale" content="fa_IR">
+  <meta property="og:title" content="Bitcoin AI Prediction System | علی">
+  <meta property="og:description" content="سیستم پیش‌بینی بازار بیت‌کوین با یادگیری ماشین.">
+  <meta property="og:url" content="https://aali-gh.github.io/project-bitcoin-ai.html">
+  <meta property="og:image" content="https://aali-gh.github.io/assets/images/og-cover.svg">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="theme-color" content="#f7f8fb">
+  <link rel="icon" href="assets/icons/favicon.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Vazirmatn:wght@300;400;500;600;700;800&amp;family=JetBrains+Mono:wght@400;500&amp;display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" crossorigin="anonymous" referrerpolicy="no-referrer">
+  <script>(function(){var d=document.documentElement;d.classList.add("js");try{if(localStorage.getItem("theme")==="dark")d.classList.add("dark")}catch(e){}})();</script>
+  <script src="https://cdn.tailwindcss.com/3.4.16"></script>
+  <script src="js/tailwind-config.js"></script>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <a href="#main" class="skip-link">پرش به محتوای اصلی</a>
+  <div id="header-mount"></div>
+
+  <main id="main">
+    <header class="page-hero">
+      <div class="container-x">
+        <nav class="crumbs" aria-label="مسیر"><a href="index.html">خانه</a><span aria-hidden="true">/</span><a href="projects.html">پروژه‌ها</a><span aria-hidden="true">/</span><span aria-current="page" class="ltr">Bitcoin AI</span></nav>
+        <div class="mt-6 flex flex-wrap items-center gap-4">
+          <span class="status status--done">تکمیل‌شده</span>
+          <span class="tag">Machine Learning</span><span class="tag">Data Science</span>
+        </div>
+        <h1 class="h1 mt-3 ltr" dir="ltr" style="display:block;text-align:right">Bitcoin AI Prediction System</h1>
+        <p class="lead mt-4">سیستم تحلیل و پیش‌بینی بازار بیت‌کوین با استفاده از داده‌های تاریخی، Feature Engineering و مدل‌های Machine Learning.</p>
+        <div class="mt-7 flex flex-wrap gap-3">
+          <a class="btn btn-primary" data-href="project:bitcoin-ai:github"><i class="fa-brands fa-github" aria-hidden="true"></i> کد روی GitHub</a>
+          <a class="btn btn-ghost" data-href="project:bitcoin-ai:demo"><i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i> Live Demo</a>
+        </div>
+      </div>
+    </header>
+
+    <div class="container-x grid gap-12 pb-20 lg:grid-cols-12">
+      <article class="lg:col-span-8 grid gap-14">
+        <section aria-labelledby="overview">
+          <h2 id="overview" class="h2">مرور کلی</h2>
+          <div class="prose-fa mt-4 text-muted">
+            <p>هدف این پروژه ساخت یک پایپ‌لاین کامل برای پیش‌بینی حرکت قیمت بیت‌کوین از روی داده‌های تاریخی بود: از دریافت و پاک‌سازی داده تا ساخت ویژگی، آموزش مدل و ارزیابی صادقانه با اعتبارسنجی زمانی.</p>
+            <p>تمرکز اصلی روی <strong class="text-ink">درست ارزیابی کردن</strong> بود، نه صرفاً بالا بردن یک عدد؛ چون در سری‌های زمانی مالی، ساده‌ترین اشتباه‌ها (مثل نشت داده) نتیجه‌های بسیار خوش‌بینانه می‌سازند.</p>
+          </div>
+        </section>
+
+        <section aria-labelledby="pipeline">
+          <h2 id="pipeline" class="h2">پایپ‌لاین</h2>
+          <ol class="timeline mt-6">
+            <li class="tl-item"><p class="mono text-xs text-accent">01 — data</p><h3 class="font-bold mt-1">دریافت و پاک‌سازی داده</h3><p class="text-sm text-muted leading-7">داده‌های OHLCV روزانه، حذف مقادیر ناقص و یکسان‌سازی بازهٔ زمانی با Pandas.</p></li>
+            <li class="tl-item"><p class="mono text-xs text-accent">02 — features</p><h3 class="font-bold mt-1">Feature Engineering</h3><p class="text-sm text-muted leading-7">بازده، نوسان، میانگین‌های متحرک و ویژگی‌های تأخیری؛ همه فقط با اطلاعات تا لحظهٔ <code class="inline-code">t</code>.</p></li>
+            <li class="tl-item"><p class="mono text-xs text-accent">03 — model</p><h3 class="font-bold mt-1">مدل‌سازی</h3><p class="text-sm text-muted leading-7">مقایسهٔ یک baseline ساده با مدل‌های مبتنی بر درخت (Gradient Boosting) با Scikit-learn.</p></li>
+            <li class="tl-item"><p class="mono text-xs text-accent">04 — evaluation</p><h3 class="font-bold mt-1">ارزیابی</h3><p class="text-sm text-muted leading-7">اعتبارسنجی با <code class="inline-code">TimeSeriesSplit</code> و گزارش MAE / RMSE نسبت به baseline.</p></li>
+          </ol>
+        </section>
+
+        <section aria-labelledby="code">
+          <h2 id="code" class="h2">نمونه کد</h2>
+          <p class="sub mt-3">هستهٔ ساخت ویژگی و اعتبارسنجی زمانی (نسخهٔ ساده‌شده).</p>
+          <div class="codebox mt-5">
+            <div class="codebox-bar"><span class="mono">pipeline.py</span>
+              <button type="button" class="btn btn-ghost btn-sm" data-copy-code><i class="fa-regular fa-copy" aria-hidden="true"></i> کپی</button></div>
+<pre><code><span class="k">import</span> pandas <span class="k">as</span> pd
+<span class="k">from</span> sklearn.ensemble <span class="k">import</span> GradientBoostingRegressor
+<span class="k">from</span> sklearn.model_selection <span class="k">import</span> TimeSeriesSplit
+<span class="k">from</span> sklearn.metrics <span class="k">import</span> mean_absolute_error
+
+df = pd.read_csv(<span class="s">"btc_daily.csv"</span>, parse_dates=[<span class="s">"date"</span>]).set_index(<span class="s">"date"</span>)
+
+<span class="c"># Feature engineering — only information available at time t</span>
+df[<span class="s">"ret_1d"</span>] = df[<span class="s">"close"</span>].pct_change()
+df[<span class="s">"sma_7"</span>]  = df[<span class="s">"close"</span>].rolling(7).mean()
+df[<span class="s">"vol_14"</span>] = df[<span class="s">"ret_1d"</span>].rolling(14).std()
+df[<span class="s">"target"</span>] = df[<span class="s">"close"</span>].shift(-1)          <span class="c"># next-day close</span>
+df = df.dropna()
+
+X, y = df[[<span class="s">"ret_1d"</span>, <span class="s">"sma_7"</span>, <span class="s">"vol_14"</span>]], df[<span class="s">"target"</span>]
+
+scores = []
+<span class="k">for</span> train, test <span class="k">in</span> TimeSeriesSplit(n_splits=5).split(X):
+    model = GradientBoostingRegressor(random_state=42)
+    model.fit(X.iloc[train], y.iloc[train])
+    scores.append(mean_absolute_error(y.iloc[test], model.predict(X.iloc[test])))</code></pre>
+          </div>
+        </section>
+
+        <section aria-labelledby="learn">
+          <h2 id="learn" class="h2">آموخته‌ها</h2>
+          <ul class="prose-fa mt-4">
+            <li>یک baseline ساده (مثلاً «قیمت فردا = قیمت امروز») معیار واقعی موفقیت است.</li>
+            <li>اعتبارسنجی تصادفی در سری زمانی گمراه‌کننده است؛ تقسیم باید زمانی باشد.</li>
+            <li>پیچیدگی مدل کمتر از کیفیت ویژگی‌ها و صحت ارزیابی اهمیت دارد.</li>
+          </ul>
+          <p class="mt-6 rounded-xl border border-line bg-surface-2 px-4 py-3 text-sm text-muted"><i class="fa-solid fa-circle-info text-accent me-2" aria-hidden="true"></i>این پروژه صرفاً آموزشی و پژوهشی است و توصیهٔ مالی یا سرمایه‌گذاری محسوب نمی‌شود.</p>
+        </section>
+      </article>
+
+      <aside class="lg:col-span-4">
+        <div class="grid gap-5 lg:sticky lg:top-24">
+          <div class="card card-static p-5">
+            <h2 class="font-bold">تکنولوژی‌ها</h2>
+            <ul class="mt-4 flex flex-wrap gap-1.5">
+              <li class="chip">Python</li><li class="chip">Pandas</li><li class="chip">NumPy</li><li class="chip">Scikit-learn</li><li class="chip">Machine Learning</li>
+            </ul>
+          </div>
+          <div class="card card-static p-5">
+            <h2 class="font-bold">خلاصه پروژه</h2>
+            <dl class="mt-3 text-sm">
+              <div class="flex justify-between py-2 border-b border-line"><dt class="text-muted">نوع</dt><dd>Time-series ML</dd></div>
+              <div class="flex justify-between py-2 border-b border-line"><dt class="text-muted">وضعیت</dt><dd>تکمیل‌شده</dd></div>
+              <div class="flex justify-between py-2"><dt class="text-muted">اعتبارسنجی</dt><dd class="mono text-xs">TimeSeriesSplit</dd></div>
+            </dl>
+          </div>
+        </div>
+      </aside>
+    </div>
+
+    <section class="section border-t border-line" aria-labelledby="more-title">
+      <div class="container-x">
+        <h2 id="more-title" class="h2 mb-8">پروژه‌های دیگر</h2>
+        <div id="more-projects" data-exclude="bitcoin-ai" class="grid gap-6 md:grid-cols-2"></div>
+      </div>
+    </section>
+  </main>
+
+  <div id="footer-mount"></div>
+
+  <script src="js/config.js" defer></script>
+  <script src="js/components.js" defer></script>
+  <script src="js/theme.js" defer></script>
+  <script src="js/main.js" defer></script>
+  <script src="js/projects.js" defer></script>
+</body>
+</html>

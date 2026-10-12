@@ -1,0 +1,106 @@
+<!doctype html>
+<html lang="fa" dir="rtl">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>تماس با من | علی — AI Engineer &amp; Python Developer</title>
+  <meta name="description" content="راه‌های ارتباط با من: ایمیل، GitHub، LinkedIn و Telegram — یا از طریق فرم تماس پیام بفرستید.">
+  <link rel="canonical" href="https://aali-gh.github.io/contact.html">
+  <meta property="og:type" content="website">
+  <meta property="og:locale" content="fa_IR">
+  <meta property="og:title" content="تماس با من | علی">
+  <meta property="og:description" content="برای همکاری و گفتگوی فنی پیام بدهید.">
+  <meta property="og:url" content="https://aali-gh.github.io/contact.html">
+  <meta property="og:image" content="https://aali-gh.github.io/assets/images/og-cover.svg">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="theme-color" content="#f7f8fb">
+  <link rel="icon" href="assets/icons/favicon.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Vazirmatn:wght@300;400;500;600;700;800&amp;family=JetBrains+Mono:wght@400;500&amp;display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" crossorigin="anonymous" referrerpolicy="no-referrer">
+  <script>(function(){var d=document.documentElement;d.classList.add("js");try{if(localStorage.getItem("theme")==="dark")d.classList.add("dark")}catch(e){}})();</script>
+  <script src="https://cdn.tailwindcss.com/3.4.16"></script>
+  <script src="js/tailwind-config.js"></script>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <a href="#main" class="skip-link">پرش به محتوای اصلی</a>
+  <div id="header-mount"></div>
+
+  <main id="main">
+    <header class="page-hero">
+      <div class="container-x">
+        <nav class="crumbs" aria-label="مسیر"><a href="index.html">خانه</a><span aria-hidden="true">/</span><span aria-current="page">تماس</span></nav>
+        <p class="eyebrow mt-6">contact</p>
+        <h1 class="h1 mt-2">بیایید صحبت کنیم</h1>
+        <p class="lead mt-3">برای همکاری، پروژه یا یک گفتگوی فنی پیام بدهید؛ معمولاً در همان روز پاسخ می‌دهم.</p>
+      </div>
+    </header>
+
+    <section class="section pt-6" aria-label="اطلاعات تماس و فرم">
+      <div class="container-x grid gap-8 lg:grid-cols-12">
+        <div class="lg:col-span-5 grid gap-4 content-start" data-render="channels"></div>
+
+        <div class="lg:col-span-7">
+          <form id="contact-form" class="card card-static p-6 md:p-8 reveal" novalidate
+                aria-labelledby="form-title" method="post">
+            <h2 id="form-title" class="text-xl font-bold">ارسال پیام</h2>
+            <p class="mt-1 text-sm text-muted">همهٔ فیلدها الزامی هستند.</p>
+
+            <div class="mt-6 grid gap-1 sm:grid-cols-2 sm:gap-x-5">
+              <div class="field">
+                <label for="f-name">نام</label>
+                <input id="f-name" name="name" class="input" type="text" autocomplete="name" aria-describedby="err-name" aria-invalid="false" placeholder="نام و نام خانوادگی">
+                <p id="err-name" class="err" aria-live="polite"></p>
+              </div>
+              <div class="field">
+                <label for="f-email">ایمیل</label>
+                <input id="f-email" name="email" class="input" type="email" dir="ltr" autocomplete="email" aria-describedby="err-email" aria-invalid="false" placeholder="you@example.com">
+                <p id="err-email" class="err" aria-live="polite"></p>
+              </div>
+            </div>
+            <div class="field">
+              <label for="f-subject">موضوع</label>
+              <input id="f-subject" name="subject" class="input" type="text" aria-describedby="err-subject" aria-invalid="false" placeholder="مثلاً: همکاری در یک پروژه ML">
+              <p id="err-subject" class="err" aria-live="polite"></p>
+            </div>
+            <div class="field">
+              <label for="f-message">پیام</label>
+              <textarea id="f-message" name="message" class="input" rows="6" maxlength="2000" aria-describedby="err-message" aria-invalid="false" placeholder="پیام خود را بنویسید…"></textarea>
+              <div class="flex justify-between">
+                <p id="err-message" class="err" aria-live="polite"></p>
+                <p class="mt-1 text-xs text-muted"><span id="msg-count">۰</span> / ۲٬۰۰۰</p>
+              </div>
+            </div>
+
+            <div class="hp" aria-hidden="true">
+              <label>وب‌سایت <input type="text" name="website" tabindex="-1" autocomplete="off"></label>
+            </div>
+
+            <button type="submit" class="btn btn-primary mt-3 w-full sm:w-auto">
+              <i class="fa-solid fa-paper-plane" aria-hidden="true"></i> ارسال پیام
+            </button>
+          </form>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <dialog id="success-dialog" class="dialog" aria-labelledby="dlg-title">
+    <div class="p-7 text-center">
+      <span class="ex-icon mx-auto !w-14 !h-14 !text-xl"><i class="fa-solid fa-check" aria-hidden="true"></i></span>
+      <h2 id="dlg-title" class="mt-5 text-lg font-bold">پیام شما ثبت شد</h2>
+      <p class="mt-2 text-sm text-muted">ممنون از ارتباط شما. به‌زودی پاسخ می‌دهم.</p>
+      <button type="button" class="btn btn-primary mt-6" data-close>باشه</button>
+    </div>
+  </dialog>
+
+  <div id="footer-mount"></div>
+
+  <script src="js/config.js" defer></script>
+  <script src="js/components.js" defer></script>
+  <script src="js/theme.js" defer></script>
+  <script src="js/main.js" defer></script>
+</body>
+</html>

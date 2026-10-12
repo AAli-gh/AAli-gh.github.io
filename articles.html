@@ -1,0 +1,68 @@
+<!doctype html>
+<html lang="fa" dir="rtl">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>مقالات | علی — AI Engineer &amp; Python Developer</title>
+  <meta name="description" content="مقالات فنی دربارهٔ هوش مصنوعی، یادگیری ماشین، پایتون، علم داده و توسعه بک‌اند؛ با قابلیت فیلتر بر اساس دسته‌بندی.">
+  <link rel="canonical" href="https://aali-gh.github.io/articles.html">
+  <meta property="og:type" content="website">
+  <meta property="og:locale" content="fa_IR">
+  <meta property="og:title" content="مقالات | علی">
+  <meta property="og:description" content="یادداشت‌های فنی دربارهٔ AI، ML، پایتون و بک‌اند.">
+  <meta property="og:url" content="https://aali-gh.github.io/articles.html">
+  <meta property="og:image" content="https://aali-gh.github.io/assets/images/og-cover.svg">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="theme-color" content="#f7f8fb">
+  <link rel="icon" href="assets/icons/favicon.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Vazirmatn:wght@300;400;500;600;700;800&amp;family=JetBrains+Mono:wght@400;500&amp;display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" crossorigin="anonymous" referrerpolicy="no-referrer">
+  <script>(function(){var d=document.documentElement;d.classList.add("js");try{if(localStorage.getItem("theme")==="dark")d.classList.add("dark")}catch(e){}})();</script>
+  <script src="https://cdn.tailwindcss.com/3.4.16"></script>
+  <script src="js/tailwind-config.js"></script>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <a href="#main" class="skip-link">پرش به محتوای اصلی</a>
+  <div id="header-mount"></div>
+
+  <main id="main">
+    <header class="page-hero">
+      <div class="container-x">
+        <nav class="crumbs" aria-label="مسیر"><a href="index.html">خانه</a><span aria-hidden="true">/</span><span aria-current="page">مقالات</span></nav>
+        <p class="eyebrow mt-6">writing</p>
+        <h1 class="h1 mt-2">مقالات</h1>
+        <p class="lead mt-3">یادداشت‌هایی دربارهٔ آن‌چه یاد می‌گیرم و می‌سازم؛ از یادگیری ماشین تا مهندسی بک‌اند.</p>
+      </div>
+    </header>
+
+    <section class="section pt-6" aria-label="فهرست مقالات">
+      <div class="container-x">
+        <div class="grid gap-4 mb-8">
+          <div class="relative max-w-md">
+            <label for="article-search" class="sr-only">جست‌وجو در مقالات</label>
+            <i class="fa-solid fa-magnifying-glass absolute top-1/2 -translate-y-1/2 start-4 text-muted pointer-events-none" aria-hidden="true"></i>
+            <input id="article-search" type="search" class="input ps-11" placeholder="جست‌وجو در مقالات…" autocomplete="off">
+          </div>
+          <div class="flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-between">
+            <div id="article-filters" class="flex flex-wrap gap-2" role="group" aria-label="فیلتر بر اساس دسته‌بندی"></div>
+            <p id="articles-count" class="text-sm text-muted" aria-live="polite"></p>
+          </div>
+        </div>
+        <div id="articles-grid" class="grid gap-6 md:grid-cols-2 lg:grid-cols-3"></div>
+        <p id="articles-empty" class="text-center text-muted py-16" hidden>مقاله‌ای با این مشخصات پیدا نشد.</p>
+      </div>
+    </section>
+  </main>
+
+  <div id="footer-mount"></div>
+
+  <script src="js/config.js" defer></script>
+  <script src="js/components.js" defer></script>
+  <script src="js/theme.js" defer></script>
+  <script src="js/main.js" defer></script>
+  <script src="js/articles.js" defer></script>
+</body>
+</html>
