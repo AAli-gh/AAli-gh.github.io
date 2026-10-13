@@ -355,15 +355,18 @@
   /* ------------------------------------------------------------------ */
   /* Scroll reveal                                                       */
   /* ------------------------------------------------------------------ */
+  function show(el) {
+    requestAnimationFrame(function () { el.classList.add("is-visible"); });
+    // drop the helper classes afterwards so hover transforms on cards work normally
+    setTimeout(function () { el.classList.remove("reveal", "is-visible"); el.style.removeProperty("--d"); }, 1300);
+  }
+
   var io = "IntersectionObserver" in window
     ? new IntersectionObserver(function (entries) {
         entries.forEach(function (e) {
           if (!e.isIntersecting) return;
-          var el = e.target;
-          io.unobserve(el);
-          el.classList.add("is-visible");
-          // drop the helper classes afterwards so hover transforms on cards work normally
-          setTimeout(function () { el.classList.remove("reveal", "is-visible"); el.style.removeProperty("--d"); }, 1200);
+          io.unobserve(e.target);
+          show(e.target);
         });
       }, { threshold: 0.1, rootMargin: "0px 0px -5% 0px" })
     : null;
@@ -374,6 +377,8 @@
       if (!io) { el.classList.add("is-visible"); return; }
       var idx = el.parentNode ? Array.prototype.indexOf.call(el.parentNode.children, el) : 0;
       el.style.setProperty("--d", (idx % 6) * 70 + "ms");
+      var r = el.getBoundingClientRect();
+      if (r.top < window.innerHeight && r.bottom > 0) { show(el); return; } // above the fold: no waiting for the observer
       io.observe(el);
     });
   }

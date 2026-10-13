@@ -1,6 +1,8 @@
-/* Tailwind (CDN) configuration — design tokens are CSS variables defined in css/style.css */
-tailwind.config = {
+/** @type {import('tailwindcss').Config} */
+module.exports = {
   darkMode: "class",
+  // Classes also appear inside JS strings (cards, header, footer), so scan js/ too.
+  content: ["./*.html", "./js/**/*.js"],
   theme: {
     extend: {
       fontFamily: {

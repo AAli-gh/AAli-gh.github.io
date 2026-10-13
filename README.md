@@ -17,7 +17,6 @@
 │   ├── projects.js          فیلتر و نمایش پروژه‌ها
 │   ├── articles.js          فیلتر مقالات و صفحهٔ تک‌مقاله
 │   ├── resume.js            پر کردن صفحهٔ رزومه
-│   └── tailwind-config.js   تنظیمات Tailwind (CDN)
 └── assets/{images,icons,fonts}
 ```
 
@@ -62,7 +61,14 @@ python -m http.server 8080
 
 ## نکات فنی
 
-- **Tailwind** از CDN رسمی (نسخهٔ پین‌شده) بارگذاری می‌شود تا هیچ مرحلهٔ Build لازم نباشد. برای Production می‌توانید Tailwind CLI را اضافه و CSS خروجی را جایگزین کنید.
+- **Tailwind** با CLI (نسخهٔ ۳٫۴٫۱۶) ساخته می‌شود و خروجی `css/tailwind.css` در مخزن Commit شده است؛ بنابراین GitHub Pages به هیچ Build نیاز ندارد. فقط وقتی کلاس‌های Tailwind را در HTML یا JS تغییر دادید، دوباره بسازید:
+
+  ```bash
+  npm install      # فقط بار اول
+  npm run build    # خروجی کوچک‌شده در css/tailwind.css
+  npm run watch    # حین توسعه
+  ```
+  تنظیمات در `tailwind.config.js` و ورودی در `src/input.css` است.
 - **فونت**: Vazirmatn و JetBrains Mono از Google Fonts؛ برای میزبانی خودتان فایل‌ها را در `assets/fonts` بگذارید و `@font-face` اضافه کنید.
 - **تصاویر پروژه/مقاله** به‌صورت SVG تولیدی ساخته می‌شوند (بدون فایل تصویری)؛ می‌توانید در `config.js` به‌جای آن تصویر واقعی قرار دهید.
 - داده‌های نمودار Hero و معیارهای کنار آن **نمایشی** هستند.
