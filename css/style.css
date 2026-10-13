@@ -134,6 +134,12 @@ code, pre, .mono { font-family: "JetBrains Mono", ui-monospace, SFMono-Regular, 
 }
 .site-header.is-stuck .nav-shell { background: rgb(var(--surface) / 0.72); }
 .logo { display: inline-flex; align-items: center; gap: 0.65rem; font-weight: 700; }
+.logo-img {
+  height: 2.35rem; width: auto; border-radius: 0.65rem; object-fit: cover;
+  box-shadow: 0 0 0 1px rgb(var(--ink) / 0.12), 0 6px 18px -8px rgb(224 140 40 / 0.55);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.logo:hover .logo-img { transform: scale(1.05); box-shadow: 0 0 0 1px rgb(224 140 40 / 0.5), 0 8px 22px -6px rgb(224 140 40 / 0.7); }
 .logo-text { display: grid; line-height: 1.2; }
 .logo-name { display: inline-flex; align-items: center; gap: 0.35rem; font-size: 1.05rem; }
 .logo-dot { width: 0.4rem; height: 0.4rem; border-radius: 50%; background: rgb(var(--ok)); box-shadow: 0 0 0 3px rgb(var(--ok) / 0.18); }

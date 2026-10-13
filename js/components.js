@@ -72,11 +72,7 @@
       ' aria-label="' + s.label + '" title="' + s.label + '"><i class="' + s.icon + '" aria-hidden="true"></i></a>';
   }
 
-  var LOGO =
-    '<svg viewBox="0 0 32 32" width="30" height="30" aria-hidden="true">' +
-    '<rect width="32" height="32" rx="9" style="fill:rgb(var(--ink))"/>' +
-    '<path d="M9 21l5-9 4 6 5-8" fill="none" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" style="stroke:rgb(var(--bg))"/>' +
-    '<circle cx="9" cy="21" r="2.4" style="fill:rgb(var(--accent))"/><circle cx="23" cy="10" r="2.4" style="fill:rgb(var(--accent))"/></svg>';
+  var LOGO = '<img class="logo-img" src="assets/logo/logo-mark.jpg" width="48" height="37" alt="" decoding="async">';
 
   function headerHTML() {
     var cur = currentKey();
