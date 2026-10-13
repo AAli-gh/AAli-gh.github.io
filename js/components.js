@@ -89,22 +89,26 @@
         '<i class="fa-solid fa-arrow-left text-muted text-sm" aria-hidden="true"></i></a>';
     }).join("");
     var socials = SOCIALS.map(function (s) { return socialLink(s, "icon-btn"); }).join("");
+    // DOM order is right→left in RTL: search sits next to the nav, the theme toggle is the left-most control.
+    var tools = [SOCIALS[3], SOCIALS[2], SOCIALS[1], SOCIALS[0]].map(function (s) { return socialLink(s, "icon-btn hidden sm:grid"); }).join("");
 
     return (
-      '<header class="site-header" id="site-header"><div class="container-x flex h-16 items-center justify-between gap-4">' +
+      '<header class="site-header" id="site-header"><div class="nav-wrap">' +
+      '<div class="nav-shell">' +
       '<a href="index.html" class="logo" aria-label="' + esc(S.name) + ' — صفحه اصلی">' + LOGO +
-      "<span>" + esc(S.name) + "</span><small>/ai</small></a>" +
+      '<span class="logo-text"><span class="logo-name">' + esc(S.name) + '<i class="logo-dot" aria-hidden="true"></i></span>' +
+      '<small>' + esc((S.role || "").split("&")[0].trim()) + "</small></span></a>" +
       '<nav class="hidden lg:flex items-center gap-1" aria-label="ناوبری اصلی">' + links + "</nav>" +
-      '<div class="flex items-center gap-1">' +
-      '<span class="hidden sm:flex items-center">' + socialLink(SOCIALS[0], "icon-btn") + socialLink(SOCIALS[1], "icon-btn") + "</span>" +
-      '<span class="hidden sm:block w-px h-5 bg-line mx-2" aria-hidden="true"></span>' +
-      '<button type="button" class="theme-toggle" data-theme-toggle aria-label="تغییر تم روشن / تاریک" aria-pressed="false">' +
-      '<span class="thumb"><i class="fa-solid fa-moon" aria-hidden="true"></i><i class="fa-solid fa-sun" aria-hidden="true"></i></span></button>' +
-      '<button type="button" id="nav-toggle" class="icon-btn lg:hidden ms-1" aria-label="باز کردن منو" aria-expanded="false" aria-controls="mobile-nav">' +
+      '<div class="flex items-center gap-0.5">' +
+      '<a class="icon-btn hidden sm:grid" href="articles.html?focus=search" aria-label="جست‌وجو در مقالات" title="جست‌وجو"><i class="fa-solid fa-magnifying-glass" aria-hidden="true"></i></a>' +
+      tools +
+      '<button type="button" class="icon-btn theme-toggle" data-theme-toggle aria-label="تغییر تم روشن / تاریک" aria-pressed="false">' +
+      '<i class="fa-solid fa-moon" aria-hidden="true"></i><i class="fa-solid fa-sun" aria-hidden="true"></i></button>' +
+      '<button type="button" id="nav-toggle" class="icon-btn lg:hidden" aria-label="باز کردن منو" aria-expanded="false" aria-controls="mobile-nav">' +
       '<i class="fa-solid fa-bars" aria-hidden="true"></i></button>' +
       "</div></div>" +
-      '<div id="mobile-nav" class="mobile-nav lg:hidden" hidden><div class="container-x py-3">' + mobile +
-      '<div class="flex items-center gap-1 py-4">' + socials + "</div></div></div></header>"
+      '<div id="mobile-nav" class="mobile-nav lg:hidden" hidden><div class="p-4">' + mobile +
+      '<div class="flex items-center gap-1 pt-4">' + socials + "</div></div></div></div></header>"
     );
   }
 

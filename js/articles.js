@@ -51,6 +51,7 @@
       bar.querySelectorAll(".filter").forEach(function (x) { x.setAttribute("aria-pressed", String(x.getAttribute("data-cat") === preset)); });
     }
     render();
+    if (new URLSearchParams(location.search).get("focus") === "search") search.focus();
   }
 
   /* ----- Single article page ----- */
