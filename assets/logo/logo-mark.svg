@@ -1,0 +1,41 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="110 70 980 660" role="img" aria-label="ALI"><defs>
+    <linearGradient id="gold" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#fff0c2"/>
+      <stop offset="0.28" stop-color="#d99a3a"/>
+      <stop offset="0.55" stop-color="#ffcf70"/>
+      <stop offset="1" stop-color="#8f5b18"/>
+    </linearGradient>
+    <linearGradient id="steel" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#f4f5f7"/>
+      <stop offset="0.3" stop-color="#8c929a"/>
+      <stop offset="0.58" stop-color="#343940"/>
+      <stop offset="1" stop-color="#11151a"/>
+    </linearGradient>
+    <linearGradient id="edge" x1="0" y1="1" x2="1" y2="0">
+      <stop offset="0" stop-color="#6b3d0e"/>
+      <stop offset="0.5" stop-color="#ffe2a0"/>
+      <stop offset="1" stop-color="#a86c1b"/>
+    </linearGradient>
+    <filter id="shadow" x="-30%" y="-30%" width="160%" height="180%">
+      <feDropShadow dx="0" dy="18" stdDeviation="18" flood-opacity=".35"/>
+    </filter>
+  </defs><!-- Main A mark -->
+  <g filter="url(#shadow)" stroke-linejoin="round">
+    <path d="M180 610 L475 130 Q500 90 530 130 L735 475 L645 545 L505 310 L310 650 Z"
+          fill="url(#gold)" stroke="url(#edge)" stroke-width="6"/>
+    <path d="M535 130 L755 560 L1030 560 L885 480 L805 330 L690 130 Z"
+          fill="url(#steel)" stroke="url(#gold)" stroke-width="5"/>
+    <!-- inner negative space -->
+    <path d="M398 520 L505 335 L590 485 L548 530 L505 455 L462 530 Z" fill="#11151a" opacity=".9"/>
+
+    <!-- orbital ribbon -->
+    <path d="M145 555 C330 395 535 385 770 475 C890 521 975 475 1035 405"
+          fill="none" stroke="#11151a" stroke-width="58"/>
+    <path d="M145 540 C330 380 535 370 770 460 C890 506 975 460 1035 390"
+          fill="none" stroke="url(#steel)" stroke-width="42"/>
+    <path d="M145 540 C330 380 535 370 770 460 C890 506 975 460 1035 390"
+          fill="none" stroke="url(#gold)" stroke-width="6" opacity=".95"/>
+
+    <!-- orbital sphere -->
+    <circle cx="1030" cy="390" r="40" fill="url(#gold)" stroke="#ffe3a2" stroke-width="5"/>
+  </g></svg>

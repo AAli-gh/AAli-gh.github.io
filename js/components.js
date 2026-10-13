@@ -72,7 +72,7 @@
       ' aria-label="' + s.label + '" title="' + s.label + '"><i class="' + s.icon + '" aria-hidden="true"></i></a>';
   }
 
-  var LOGO = '<img class="logo-img" src="assets/logo/logo-mark.jpg" width="48" height="37" alt="" decoding="async">';
+  var LOGO = '<img class="logo-img" src="assets/logo/logo-badge.svg" width="40" height="40" alt="" decoding="async">';
 
   function headerHTML() {
     var cur = currentKey();
