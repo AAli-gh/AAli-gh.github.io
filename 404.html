@@ -1,0 +1,55 @@
+<!doctype html>
+<html lang="fa" dir="rtl">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <!-- GitHub Pages serves this file at ANY missing URL, so every path must be root-absolute. -->
+  <base href="/">
+  <title>۴۰۴ — صفحه پیدا نشد | علی</title>
+  <meta name="description" content="صفحه‌ای که دنبالش بودید پیدا نشد.">
+  <meta name="robots" content="noindex">
+  <meta name="theme-color" content="#f7f8fb">
+  <link rel="icon" href="/assets/icons/favicon.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Vazirmatn:wght@300;400;500;600;700;800&amp;family=JetBrains+Mono:wght@400;500&amp;display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" crossorigin="anonymous" referrerpolicy="no-referrer">
+  <script>(function(){var d=document.documentElement;d.classList.add("js");try{if(localStorage.getItem("theme")==="dark")d.classList.add("dark")}catch(e){}})();</script>
+  <script src="https://cdn.tailwindcss.com/3.4.16"></script>
+  <script src="/js/tailwind-config.js"></script>
+  <link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+  <a href="#main" class="skip-link">پرش به محتوای اصلی</a>
+  <div id="header-mount"></div>
+
+  <main id="main">
+    <section class="hero-bg">
+      <div class="container-x py-20 text-center md:py-28">
+        <p class="mono text-accent reveal" style="font-size:clamp(4rem,14vw,8rem);font-weight:800;line-height:1;direction:ltr">404</p>
+        <h1 class="h1 mt-6 reveal">این صفحه پیدا نشد</h1>
+        <p class="lead mx-auto mt-4 reveal">آدرس را اشتباه وارد کرده‌اید یا صفحه جابه‌جا شده است.</p>
+        <p class="mono mx-auto mt-4 text-xs text-muted reveal" dir="ltr" style="word-break:break-all"><span id="missing-path"></span></p>
+        <div class="mt-9 flex flex-wrap justify-center gap-3 reveal">
+          <a class="btn btn-primary" href="index.html"><i class="fa-solid fa-house" aria-hidden="true"></i> بازگشت به خانه</a>
+          <a class="btn btn-ghost" href="projects.html">مشاهده پروژه‌ها</a>
+          <a class="btn btn-ghost" href="contact.html">تماس با من</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <div id="footer-mount"></div>
+
+  <script src="/js/config.js" defer></script>
+  <script src="/js/components.js" defer></script>
+  <script src="/js/theme.js" defer></script>
+  <script src="/js/main.js" defer></script>
+  <script>
+    window.addEventListener("DOMContentLoaded", function () {
+      var el = document.getElementById("missing-path");
+      if (el && location.pathname !== "/404.html") el.textContent = location.pathname;
+    });
+  </script>
+</body>
+</html>
