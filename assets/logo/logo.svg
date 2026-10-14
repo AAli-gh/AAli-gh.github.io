@@ -22,31 +22,48 @@
     <filter id="shadow" x="-30%" y="-30%" width="160%" height="180%">
       <feDropShadow dx="0" dy="18" stdDeviation="18" flood-opacity=".35"/>
     </filter>
-  </defs>
+  </defs><style>
+  .p{transform-box:fill-box;transform-origin:50% 100%}
+  .gold-leg{animation:rise 1.00s 0.00s cubic-bezier(.2,.8,.2,1) backwards,breathe 9.00s 2.20s ease-in-out infinite}
+  .steel-leg{animation:rise 1.00s 0.18s cubic-bezier(.2,.8,.2,1) backwards}
+  .neg{animation:fade 0.60s 0.70s ease backwards}
+  .rib-shadow,.rib,.rib-line{stroke-dasharray:1;stroke-dashoffset:0;animation:draw 1.40s 0.55s cubic-bezier(.4,0,.2,1) backwards}
+  .rib-line{animation-delay:0.70s}
+  .orb{animation:fade 0.20s 0.55s backwards}
+  .halo{transform-box:fill-box;transform-origin:center;animation:fade 0.40s 2.00s backwards,pulse 2.6s 2.20s ease-out infinite}
+  .word{animation:rise2 0.90s 1.20s ease backwards}
+  @keyframes rise{from{opacity:0;transform:translateY(46px)}to{opacity:1;transform:none}}
+  @keyframes rise2{from{opacity:0;transform:translateY(14px)}to{opacity:1;transform:none}}
+  @keyframes fade{from{opacity:0}to{opacity:1}}
+  @keyframes draw{from{stroke-dashoffset:1}to{stroke-dashoffset:0}}
+  @keyframes breathe{0%,100%{filter:brightness(1)}50%{filter:brightness(1.22)}}
+  @keyframes pulse{0%{opacity:.7;transform:scale(1)}100%{opacity:0;transform:scale(2.1)}}
+  @media (prefers-reduced-motion:reduce){*{animation:none!important}}
+</style>
 
   <!-- Main A mark -->
   <g filter="url(#shadow)" stroke-linejoin="round">
-    <path d="M180 610 L475 130 Q500 90 530 130 L735 475 L645 545 L505 310 L310 650 Z"
+    <path class="gold-leg" d="M180 610 L475 130 Q500 90 530 130 L735 475 L645 545 L505 310 L310 650 Z"
           fill="url(#gold)" stroke="url(#edge)" stroke-width="6"/>
-    <path d="M535 130 L755 560 L1030 560 L885 480 L805 330 L690 130 Z"
+    <path class="steel-leg" d="M535 130 L755 560 L1030 560 L885 480 L805 330 L690 130 Z"
           fill="url(#steel)" stroke="url(#gold)" stroke-width="5"/>
     <!-- inner negative space -->
-    <path d="M398 520 L505 335 L590 485 L548 530 L505 455 L462 530 Z" fill="#11151a" opacity=".9"/>
+    <path class="neg" d="M398 520 L505 335 L590 485 L548 530 L505 455 L462 530 Z" fill="#11151a" opacity=".9"/>
 
     <!-- orbital ribbon -->
-    <path d="M145 555 C330 395 535 385 770 475 C890 521 975 475 1035 405"
+    <path class="rib-shadow" pathLength="1" d="M145 555 C330 395 535 385 770 475 C890 521 975 475 1035 405"
           fill="none" stroke="#11151a" stroke-width="58"/>
-    <path d="M145 540 C330 380 535 370 770 460 C890 506 975 460 1035 390"
+    <path class="rib" pathLength="1" d="M145 540 C330 380 535 370 770 460 C890 506 975 460 1035 390"
           fill="none" stroke="url(#steel)" stroke-width="42"/>
-    <path d="M145 540 C330 380 535 370 770 460 C890 506 975 460 1035 390"
+    <path class="rib-line" pathLength="1" d="M145 540 C330 380 535 370 770 460 C890 506 975 460 1035 390"
           fill="none" stroke="url(#gold)" stroke-width="6" opacity=".95"/>
 
     <!-- orbital sphere -->
-    <circle cx="1030" cy="390" r="40" fill="url(#gold)" stroke="#ffe3a2" stroke-width="5"/>
+    <circle class="halo" cx="1030" cy="390" r="46" fill="none" stroke="#ffcf70" stroke-width="3"/><g class="orb"><circle cx="1030" cy="390" r="40" fill="url(#gold)" stroke="#ffe3a2" stroke-width="5"><animateMotion dur="1.50s" begin="0.60s" fill="freeze" calcMode="spline" keyTimes="0;1" keySplines=".4 0 .2 1" path="M-885 150 C-700 -10 -495 -20 -260 70 C-140 116 -55 70 0 0"/></circle></g>
   </g>
 
   <!-- Wordmark -->
-  <g text-anchor="middle" font-family="Arial, Helvetica, sans-serif">
+  <g class="word" text-anchor="middle" font-family="Arial, Helvetica, sans-serif">
     <text x="600" y="705" font-size="92" font-weight="600" letter-spacing="30" fill="url(#steel)">ALI</text>
     <line x1="315" y1="742" x2="885" y2="742" stroke="url(#gold)" stroke-width="3"/>
     <text x="600" y="780" font-size="28" font-weight="500" letter-spacing="13" fill="#c9cdd2">AI ENGINEER</text>
