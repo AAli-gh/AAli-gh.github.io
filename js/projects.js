@@ -85,7 +85,7 @@
         ((p.highlights || []).length ? '<h2 class="h2 mt-12">ویژگی‌های کلیدی</h2><ul class="prose-fa mt-4">' + p.highlights.map(function (t) { return "<li>" + UI.esc(t) + "</li>"; }).join("") + "</ul>" : "") +
         gallery + '</div><aside class="lg:col-span-4"><div class="card card-static p-5 lg:sticky lg:top-24"><h2 class="font-bold">تکنولوژی‌ها</h2>' +
         '<ul class="mt-4 flex flex-wrap gap-1.5">' + (p.stack || []).map(function (t) { return '<li class="chip">' + UI.esc(t) + "</li>"; }).join("") + "</ul></div></aside></div>" +
-        '<dialog id="lightbox" class="dialog" style="max-width:56rem"><div class="relative"><button type="button" class="icon-btn absolute top-2 end-2 z-10 bg-surface border border-line" data-close aria-label="بستن"><i class="fa-solid fa-xmark" aria-hidden="true"></i></button>' +
+        '<dialog id="lightbox" class="dialog" style="max-width:56rem"><div class="relative"><button type="button" class="icon-btn absolute top-2 end-2 z-10 bg-surface border border-line" data-close aria-label="بستن" title="بستن"><i class="fa-solid fa-xmark" aria-hidden="true"></i></button>' +
         '<img id="lightbox-img" alt="" class="block w-full h-auto object-contain" style="max-height:85vh"></div></dialog>';
 
       var lb = document.getElementById("lightbox"), lbImg = document.getElementById("lightbox-img");

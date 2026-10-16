@@ -8,8 +8,10 @@
   function sync() {
     var dark = isDark();
     document.querySelectorAll("[data-theme-toggle]").forEach(function (b) {
+      var label = dark ? "تغییر به تم روشن" : "تغییر به تم تاریک";
       b.setAttribute("aria-pressed", String(dark));
-      b.setAttribute("title", dark ? "تغییر به تم روشن" : "تغییر به تم تاریک");
+      b.setAttribute("title", label);
+      b.setAttribute("aria-label", label);
     });
     var meta = document.querySelector('meta[name="theme-color"]');
     if (meta) meta.setAttribute("content", dark ? "#080b12" : "#f7f8fb");
