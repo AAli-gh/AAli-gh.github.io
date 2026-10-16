@@ -49,6 +49,7 @@
   toTop.type = "button";
   toTop.className = "to-top no-print";
   toTop.setAttribute("aria-label", "بازگشت به بالای صفحه");
+  toTop.setAttribute("title", "بازگشت به بالای صفحه");
   toTop.innerHTML = '<i class="fa-solid fa-arrow-up" aria-hidden="true"></i>';
   document.body.appendChild(toTop);
   toTop.addEventListener("click", function () { window.scrollTo({ top: 0, behavior: reduceMotion ? "auto" : "smooth" }); });
