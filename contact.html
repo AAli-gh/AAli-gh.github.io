@@ -49,24 +49,24 @@
 
             <div class="mt-6 grid gap-1 sm:grid-cols-2 sm:gap-x-5">
               <div class="field">
-                <label for="f-name">نام</label>
-                <input id="f-name" name="name" class="input" type="text" autocomplete="name" aria-describedby="err-name" aria-invalid="false" placeholder="نام و نام خانوادگی">
+                <label for="f-name">نام <span class="text-red-500" aria-hidden="true">*</span></label>
+                <input id="f-name" name="name" class="input" type="text" autocomplete="name" required aria-required="true" aria-describedby="err-name" aria-invalid="false" placeholder="نام و نام خانوادگی">
                 <p id="err-name" class="err" aria-live="polite"></p>
               </div>
               <div class="field">
-                <label for="f-email">ایمیل</label>
-                <input id="f-email" name="email" class="input" type="email" dir="ltr" autocomplete="email" aria-describedby="err-email" aria-invalid="false" placeholder="you@example.com">
+                <label for="f-email">ایمیل <span class="text-red-500" aria-hidden="true">*</span></label>
+                <input id="f-email" name="email" class="input" type="email" dir="ltr" autocomplete="email" required aria-required="true" aria-describedby="err-email" aria-invalid="false" placeholder="you@example.com">
                 <p id="err-email" class="err" aria-live="polite"></p>
               </div>
             </div>
             <div class="field">
-              <label for="f-subject">موضوع</label>
-              <input id="f-subject" name="subject" class="input" type="text" aria-describedby="err-subject" aria-invalid="false" placeholder="مثلاً: همکاری در یک پروژه ML">
+              <label for="f-subject">موضوع <span class="text-red-500" aria-hidden="true">*</span></label>
+              <input id="f-subject" name="subject" class="input" type="text" required aria-required="true" aria-describedby="err-subject" aria-invalid="false" placeholder="مثلاً: همکاری در یک پروژه ML">
               <p id="err-subject" class="err" aria-live="polite"></p>
             </div>
             <div class="field">
-              <label for="f-message">پیام</label>
-              <textarea id="f-message" name="message" class="input" rows="6" maxlength="2000" aria-describedby="err-message" aria-invalid="false" placeholder="پیام خود را بنویسید…"></textarea>
+              <label for="f-message">پیام <span class="text-red-500" aria-hidden="true">*</span></label>
+              <textarea id="f-message" name="message" class="input" rows="6" maxlength="2000" required aria-required="true" aria-describedby="err-message" aria-invalid="false" placeholder="پیام خود را بنویسید…"></textarea>
               <div class="flex justify-between">
                 <p id="err-message" class="err" aria-live="polite"></p>
                 <p class="mt-1 text-xs text-muted"><span id="msg-count">۰</span> / ۲٬۰۰۰</p>
