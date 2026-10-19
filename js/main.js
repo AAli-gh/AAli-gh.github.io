@@ -111,7 +111,7 @@
   }
   document.addEventListener("click", function (e) {
     var btn = e.target.closest("[data-copy], [data-copy-code]");
-    if (!btn) return;
+    if (!btn || btn._copying) return;
     var text;
     if (btn.hasAttribute("data-copy-code")) {
       var pre = btn.closest(".codebox").querySelector("pre");
@@ -121,7 +121,29 @@
       text = v === "email" ? S.email : v === "url" ? location.href : v;
     }
     copyText(text).then(
-      function () { toast(btn.hasAttribute("data-copy-code") ? "کد کپی شد" : "کپی شد ✓"); },
+      function () {
+        toast(btn.hasAttribute("data-copy-code") ? "کد کپی شد" : "کپی شد ✓");
+        var origHTML = btn.innerHTML;
+        var origLabel = btn.getAttribute("aria-label");
+        var origTitle = btn.getAttribute("title");
+        btn._copying = true;
+
+        var isIconOnly = !btn.textContent.trim();
+        if (isIconOnly) {
+          btn.innerHTML = '<i class="fa-solid fa-check text-accent" aria-hidden="true"></i>';
+          btn.setAttribute("aria-label", "کپی شد!");
+          if (origTitle) btn.setAttribute("title", "کپی شد!");
+        } else {
+          btn.innerHTML = '<i class="fa-solid fa-check text-accent" aria-hidden="true"></i> کپی شد!';
+        }
+
+        setTimeout(function () {
+          btn.innerHTML = origHTML;
+          if (origLabel) btn.setAttribute("aria-label", origLabel); else btn.removeAttribute("aria-label");
+          if (origTitle) btn.setAttribute("title", origTitle); else btn.removeAttribute("title");
+          delete btn._copying;
+        }, 1800);
+      },
       function () { toast("کپی انجام نشد؛ لطفاً دستی کپی کنید"); }
     );
   });
