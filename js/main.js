@@ -121,7 +121,32 @@
       text = v === "email" ? S.email : v === "url" ? location.href : v;
     }
     copyText(text).then(
-      function () { toast(btn.hasAttribute("data-copy-code") ? "کد کپی شد" : "کپی شد ✓"); },
+      function () {
+        toast(btn.hasAttribute("data-copy-code") ? "کد کپی شد" : "کپی شد ✓");
+        var icon = btn.querySelector("i");
+        if (icon) {
+          if (btn._origIcon === undefined) btn._origIcon = icon.className;
+          if (btn._origLabel === undefined) btn._origLabel = btn.hasAttribute("aria-label") ? btn.getAttribute("aria-label") : null;
+          if (btn._origTitle === undefined) btn._origTitle = btn.hasAttribute("title") ? btn.getAttribute("title") : null;
+
+          icon.className = "fa-solid fa-check";
+          btn.setAttribute("aria-label", "کپی شد");
+          if (btn._origTitle !== null) btn.setAttribute("title", "کپی شد");
+
+          clearTimeout(btn._resetTimer);
+          btn._resetTimer = setTimeout(function () {
+            icon.className = btn._origIcon;
+            if (btn._origLabel !== null) btn.setAttribute("aria-label", btn._origLabel);
+            else btn.removeAttribute("aria-label");
+            if (btn._origTitle !== null) btn.setAttribute("title", btn._origTitle);
+            else btn.removeAttribute("title");
+
+            delete btn._origIcon;
+            delete btn._origLabel;
+            delete btn._origTitle;
+          }, 2000);
+        }
+      },
       function () { toast("کپی انجام نشد؛ لطفاً دستی کپی کنید"); }
     );
   });
