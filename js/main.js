@@ -121,7 +121,21 @@
       text = v === "email" ? S.email : v === "url" ? location.href : v;
     }
     copyText(text).then(
-      function () { toast(btn.hasAttribute("data-copy-code") ? "کد کپی شد" : "کپی شد ✓"); },
+      function () {
+        toast(btn.hasAttribute("data-copy-code") ? "کد کپی شد" : "کپی شد ✓");
+        var icon = btn.querySelector("i");
+        if (icon) {
+          if (!icon.dataset.origClass) {
+            icon.dataset.origClass = icon.className;
+          }
+          icon.className = "fa-solid fa-check text-ok";
+          clearTimeout(icon._copyTimer);
+          icon._copyTimer = setTimeout(function () {
+            icon.className = icon.dataset.origClass;
+            delete icon.dataset.origClass;
+          }, 1800);
+        }
+      },
       function () { toast("کپی انجام نشد؛ لطفاً دستی کپی کنید"); }
     );
   });
