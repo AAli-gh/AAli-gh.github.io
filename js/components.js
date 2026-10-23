@@ -230,14 +230,14 @@
   /* ------------------------------------------------------------------ */
   function projectCard(p, idx) {
     var primary = p.page || "project.html?id=" + encodeURIComponent(p.id);
-    var view = '<a class="btn btn-primary btn-sm" href="' + esc(primary) + '">مشاهده پروژه <i class="fa-solid fa-arrow-left" aria-hidden="true"></i></a>';
+    var view = '<a class="btn btn-primary btn-sm" href="' + esc(primary) + '" aria-label="مشاهده پروژه ' + esc(p.title) + '">مشاهده پروژه <i class="fa-solid fa-arrow-left" aria-hidden="true"></i></a>';
     var gh = p.github
       ? (p.private
         ? '<span class="btn btn-ghost btn-sm is-disabled" aria-disabled="true" title="مخزن خصوصی است"><i class="fa-solid fa-lock" aria-hidden="true"></i> Private</span>'
         : '<a class="btn btn-ghost btn-sm" href="' + esc(p.github) + '"' + EXT + ' aria-label="GitHub — ' + esc(p.title) + '"><i class="fa-brands fa-github" aria-hidden="true"></i> GitHub</a>')
       : "";
     var demo = p.demo
-      ? '<a class="btn btn-ghost btn-sm" href="' + esc(p.demo) + '"' + (/^https?:/.test(p.demo) ? EXT : "") + '><i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i> Live Demo</a>'
+      ? '<a class="btn btn-ghost btn-sm" href="' + esc(p.demo) + '"' + (/^https?:/.test(p.demo) ? EXT : "") + ' aria-label="پیش‌نمایش آنلاین ' + esc(p.title) + '"><i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i> Live Demo</a>'
       : "";
     var st = p.status || {};
     return (

@@ -77,6 +77,10 @@
     navBtn.firstElementChild.className = open ? "fa-solid fa-xmark" : "fa-solid fa-bars";
     document.body.classList.toggle("nav-open", open);
     if (header && open) header.classList.add("is-stuck");
+    if (open) {
+      var firstLink = navPanel.querySelector("a");
+      if (firstLink) firstLink.focus();
+    }
   }
   if (navBtn) {
     navBtn.addEventListener("click", function () { setNav(navPanel.hidden); });
