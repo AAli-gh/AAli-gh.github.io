@@ -67,6 +67,7 @@ img, svg { max-width: 100%; }
 code, pre, .mono { font-family: "JetBrains Mono", ui-monospace, SFMono-Regular, Menlo, monospace; }
 .ltr { direction: ltr; unicode-bidi: isolate; display: inline-block; }
 .text-accent { color: rgb(var(--accent)); }
+.text-ok { color: rgb(var(--ok)); }
 
 .skip-link {
   position: fixed; inset-inline-start: 1rem; top: -4rem; z-index: 100;
