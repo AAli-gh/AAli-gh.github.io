@@ -60,7 +60,9 @@
     requestAnimationFrame(function () {
       var y = window.scrollY || document.documentElement.scrollTop;
       if (header) header.classList.toggle("is-stuck", y > 8);
-      toTop.classList.toggle("show", y > 700);
+      var visible = y > 700;
+      toTop.classList.toggle("show", visible);
+      toTop.tabIndex = visible ? 0 : -1;
       ticking = false;
     });
   }
