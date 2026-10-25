@@ -7,22 +7,27 @@
 
   function sync() {
     var dark = isDark();
+    var label = dark ? "تغییر به تم روشن" : "تغییر به تم تاریک";
     document.querySelectorAll("[data-theme-toggle]").forEach(function (b) {
       b.setAttribute("aria-pressed", String(dark));
-      b.setAttribute("title", dark ? "تغییر به تم روشن" : "تغییر به تم تاریک");
+      b.setAttribute("aria-label", label);
+      b.setAttribute("title", label);
     });
     var meta = document.querySelector('meta[name="theme-color"]');
     if (meta) meta.setAttribute("content", dark ? "#080b12" : "#f7f8fb");
   }
 
-  function set(theme) {
+  function set(theme, userTriggered) {
     root.classList.toggle("dark", theme === "dark");
     try { localStorage.setItem("theme", theme); } catch (e) { /* storage unavailable */ }
     sync();
+    if (userTriggered && window.UI && window.UI.toast) {
+      window.UI.toast(theme === "dark" ? "تم تاریک فعال شد" : "تم روشن فعال شد");
+    }
   }
 
   document.addEventListener("click", function (e) {
-    if (e.target.closest("[data-theme-toggle]")) set(isDark() ? "light" : "dark");
+    if (e.target.closest("[data-theme-toggle]")) set(isDark() ? "light" : "dark", true);
   });
 
   sync();
