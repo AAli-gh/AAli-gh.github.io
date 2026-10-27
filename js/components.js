@@ -98,7 +98,7 @@
       '<div class="flex items-center gap-0.5">' +
       '<a class="icon-btn hidden sm:grid" href="articles.html?focus=search" aria-label="جست‌وجو در مقالات" title="جست‌وجو"><i class="fa-solid fa-magnifying-glass" aria-hidden="true"></i></a>' +
       tools +
-      '<button type="button" class="icon-btn theme-toggle" data-theme-toggle aria-label="تغییر تم روشن / تاریک" aria-pressed="false">' +
+      '<button type="button" class="icon-btn theme-toggle" data-theme-toggle aria-label="تغییر تم روشن / تاریک" title="تغییر تم روشن / تاریک" aria-pressed="false">' +
       '<i class="fa-solid fa-moon" aria-hidden="true"></i><i class="fa-solid fa-sun" aria-hidden="true"></i></button>' +
       '<button type="button" id="nav-toggle" class="icon-btn lg:hidden" aria-label="باز کردن منو" aria-expanded="false" aria-controls="mobile-nav">' +
       '<i class="fa-solid fa-bars" aria-hidden="true"></i></button>' +
