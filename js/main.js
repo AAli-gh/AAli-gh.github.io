@@ -49,6 +49,7 @@
   toTop.type = "button";
   toTop.className = "to-top no-print";
   toTop.setAttribute("aria-label", "بازگشت به بالای صفحه");
+  toTop.setAttribute("title", "بازگشت به بالای صفحه");
   toTop.innerHTML = '<i class="fa-solid fa-arrow-up" aria-hidden="true"></i>';
   document.body.appendChild(toTop);
   toTop.addEventListener("click", function () { window.scrollTo({ top: 0, behavior: reduceMotion ? "auto" : "smooth" }); });
@@ -121,7 +122,18 @@
       text = v === "email" ? S.email : v === "url" ? location.href : v;
     }
     copyText(text).then(
-      function () { toast(btn.hasAttribute("data-copy-code") ? "کد کپی شد" : "کپی شد ✓"); },
+      function () {
+        toast(btn.hasAttribute("data-copy-code") ? "کد کپی شد" : "کپی شد ✓");
+        var icon = btn.querySelector("i");
+        if (icon && !btn._resetTimer) {
+          var origClass = icon.className;
+          icon.className = "fa-solid fa-check text-ok";
+          btn._resetTimer = setTimeout(function () {
+            icon.className = origClass;
+            delete btn._resetTimer;
+          }, 1800);
+        }
+      },
       function () { toast("کپی انجام نشد؛ لطفاً دستی کپی کنید"); }
     );
   });
