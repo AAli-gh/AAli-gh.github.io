@@ -43,6 +43,13 @@
     });
     var t;
     search.addEventListener("input", function () { clearTimeout(t); t = setTimeout(function () { q = search.value; render(); }, 120); });
+    search.addEventListener("keydown", function (e) {
+      if (e.key === "Escape" && search.value) {
+        search.value = "";
+        q = "";
+        render();
+      }
+    });
 
     // support deep links like articles.html?cat=Python
     var preset = new URLSearchParams(location.search).get("cat");
@@ -51,7 +58,10 @@
       bar.querySelectorAll(".filter").forEach(function (x) { x.setAttribute("aria-pressed", String(x.getAttribute("data-cat") === preset)); });
     }
     render();
-    if (new URLSearchParams(location.search).get("focus") === "search") search.focus();
+    if (new URLSearchParams(location.search).get("focus") === "search") {
+      search.scrollIntoView({ behavior: "smooth", block: "center" });
+      search.focus();
+    }
   }
 
   /* ----- Single article page ----- */
