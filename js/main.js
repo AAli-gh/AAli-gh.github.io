@@ -121,7 +121,20 @@
       text = v === "email" ? S.email : v === "url" ? location.href : v;
     }
     copyText(text).then(
-      function () { toast(btn.hasAttribute("data-copy-code") ? "کد کپی شد" : "کپی شد ✓"); },
+      function () {
+        toast(btn.hasAttribute("data-copy-code") ? "کد کپی شد" : "کپی شد ✓");
+        if (btn._copyReset) clearTimeout(btn._copyReset);
+        else btn._originalHtml = btn.innerHTML;
+        var icon = btn.querySelector("i");
+        if (icon) {
+          icon.className = "fa-solid fa-check text-accent";
+        }
+        btn._copyReset = setTimeout(function () {
+          if (btn._originalHtml) btn.innerHTML = btn._originalHtml;
+          delete btn._originalHtml;
+          delete btn._copyReset;
+        }, 1800);
+      },
       function () { toast("کپی انجام نشد؛ لطفاً دستی کپی کنید"); }
     );
   });
