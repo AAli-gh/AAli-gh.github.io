@@ -121,7 +121,32 @@
       text = v === "email" ? S.email : v === "url" ? location.href : v;
     }
     copyText(text).then(
-      function () { toast(btn.hasAttribute("data-copy-code") ? "کد کپی شد" : "کپی شد ✓"); },
+      function () {
+        toast(btn.hasAttribute("data-copy-code") ? "کد کپی شد" : "کپی شد ✓");
+        if (btn.dataset.copiedTimer) clearTimeout(Number(btn.dataset.copiedTimer));
+        var origHtml = btn.dataset.origHtml || btn.innerHTML;
+        var origTitle = btn.dataset.origTitle != null ? btn.dataset.origTitle : (btn.getAttribute("title") || "");
+        var origAria = btn.dataset.origAria != null ? btn.dataset.origAria : (btn.getAttribute("aria-label") || "");
+        btn.dataset.origHtml = origHtml;
+        btn.dataset.origTitle = origTitle;
+        btn.dataset.origAria = origAria;
+
+        var isIconOnly = btn.classList.contains("icon-btn") || !btn.textContent.trim();
+        if (isIconOnly) {
+          btn.innerHTML = '<i class="fa-solid fa-check text-emerald-500" aria-hidden="true"></i>';
+          btn.setAttribute("title", "کپی شد");
+          btn.setAttribute("aria-label", "کپی شد");
+        } else {
+          btn.innerHTML = '<i class="fa-solid fa-check text-emerald-500" aria-hidden="true"></i> کپی شد ✓';
+        }
+
+        btn.dataset.copiedTimer = String(setTimeout(function () {
+          btn.innerHTML = btn.dataset.origHtml;
+          if (btn.dataset.origTitle) btn.setAttribute("title", btn.dataset.origTitle); else btn.removeAttribute("title");
+          if (btn.dataset.origAria) btn.setAttribute("aria-label", btn.dataset.origAria); else btn.removeAttribute("aria-label");
+          delete btn.dataset.copiedTimer;
+        }, 1800));
+      },
       function () { toast("کپی انجام نشد؛ لطفاً دستی کپی کنید"); }
     );
   });
