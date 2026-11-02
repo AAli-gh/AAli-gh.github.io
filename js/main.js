@@ -121,7 +121,21 @@
       text = v === "email" ? S.email : v === "url" ? location.href : v;
     }
     copyText(text).then(
-      function () { toast(btn.hasAttribute("data-copy-code") ? "کد کپی شد" : "کپی شد ✓"); },
+      function () {
+        toast(btn.hasAttribute("data-copy-code") ? "کد کپی شد" : "کپی شد ✓");
+        var origHtml = btn.innerHTML;
+        var origLabel = btn.getAttribute("aria-label");
+        var origTitle = btn.getAttribute("title");
+        btn.setAttribute("aria-label", "کپی شد");
+        if (origTitle != null) btn.setAttribute("title", "کپی شد ✓");
+        var isIconOnly = btn.classList.contains("icon-btn");
+        btn.innerHTML = '<i class="fa-solid fa-check text-accent" aria-hidden="true"></i>' + (isIconOnly ? '' : ' کپی شد ✓');
+        setTimeout(function () {
+          btn.innerHTML = origHtml;
+          if (origLabel != null) btn.setAttribute("aria-label", origLabel); else btn.removeAttribute("aria-label");
+          if (origTitle != null) btn.setAttribute("title", origTitle); else btn.removeAttribute("title");
+        }, 1800);
+      },
       function () { toast("کپی انجام نشد؛ لطفاً دستی کپی کنید"); }
     );
   });
