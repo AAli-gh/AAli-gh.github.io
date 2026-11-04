@@ -12,7 +12,7 @@
   /* ----- Listing page ----- */
   var grid = $("#articles-grid");
   if (grid) {
-    var bar = $("#article-filters"), search = $("#article-search"), count = $("#articles-count"), empty = $("#articles-empty");
+    var bar = $("#article-filters"), search = $("#article-search"), count = $("#articles-count"), empty = $("#articles-empty"), resetBtn = $("#articles-reset");
     var cats = ["همه"].concat(S.articleCategories || []);
     var current = "همه", q = "";
 
@@ -33,6 +33,25 @@
       count.textContent = UI.faNum(list.length) + " مقاله";
       empty.hidden = list.length > 0;
     };
+
+    var resetFilters = function () {
+      current = "همه";
+      q = "";
+      search.value = "";
+      bar.querySelectorAll(".filter").forEach(function (x) {
+        x.setAttribute("aria-pressed", String(x.getAttribute("data-cat") === "همه"));
+      });
+      render();
+      search.focus();
+    };
+
+    if (resetBtn) resetBtn.addEventListener("click", resetFilters);
+    search.addEventListener("keydown", function (e) {
+      if (e.key === "Escape" && (q || current !== "همه")) {
+        e.preventDefault();
+        resetFilters();
+      }
+    });
 
     bar.addEventListener("click", function (e) {
       var b = e.target.closest("[data-cat]");
