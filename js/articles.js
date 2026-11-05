@@ -12,7 +12,7 @@
   /* ----- Listing page ----- */
   var grid = $("#articles-grid");
   if (grid) {
-    var bar = $("#article-filters"), search = $("#article-search"), count = $("#articles-count"), empty = $("#articles-empty");
+    var bar = $("#article-filters"), search = $("#article-search"), searchClear = $("#search-clear"), count = $("#articles-count"), empty = $("#articles-empty");
     var cats = ["همه"].concat(S.articleCategories || []);
     var current = "همه", q = "";
 
@@ -21,7 +21,12 @@
         (c === "همه" ? "" : ' dir="auto"') + ">" + UI.esc(c) + "</button>";
     }).join("");
 
+    var updateClearBtn = function () {
+      if (searchClear) searchClear.classList.toggle("hidden", !search.value);
+    };
+
     var render = function () {
+      updateClearBtn();
       var term = q.trim().toLowerCase();
       var list = all.filter(function (a) {
         var okCat = current === "همه" || a.category === current;
@@ -42,7 +47,20 @@
       render();
     });
     var t;
-    search.addEventListener("input", function () { clearTimeout(t); t = setTimeout(function () { q = search.value; render(); }, 120); });
+    search.addEventListener("input", function () {
+      updateClearBtn();
+      clearTimeout(t);
+      t = setTimeout(function () { q = search.value; render(); }, 120);
+    });
+
+    if (searchClear) {
+      searchClear.addEventListener("click", function () {
+        search.value = "";
+        q = "";
+        search.focus();
+        render();
+      });
+    }
 
     // support deep links like articles.html?cat=Python
     var preset = new URLSearchParams(location.search).get("cat");

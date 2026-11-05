@@ -354,6 +354,7 @@ code, pre, .mono { font-family: "JetBrains Mono", ui-monospace, SFMono-Regular, 
 .input:hover { border-color: rgb(var(--muted) / 0.5); }
 .input:focus { outline: none; border-color: rgb(var(--accent)); box-shadow: 0 0 0 4px rgb(var(--accent) / 0.14); }
 .input[aria-invalid="true"] { border-color: rgb(var(--danger)); }
+.input::-webkit-search-cancel-button { -webkit-appearance: none; appearance: none; display: none; }
 .err { min-height: 1.3rem; margin-top: 0.3rem; font-size: 0.78rem; color: rgb(var(--danger)); }
 .hp { position: absolute; inset-inline-start: -9999px; width: 1px; height: 1px; overflow: hidden; }
 

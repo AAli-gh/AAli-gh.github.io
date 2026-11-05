@@ -43,7 +43,10 @@
           <div class="relative max-w-md">
             <label for="article-search" class="sr-only">جست‌وجو در مقالات</label>
             <i class="fa-solid fa-magnifying-glass absolute top-1/2 -translate-y-1/2 start-4 text-muted pointer-events-none" aria-hidden="true"></i>
-            <input id="article-search" type="search" class="input ps-11" placeholder="جست‌وجو در مقالات…" autocomplete="off">
+            <input id="article-search" type="search" class="input ps-11 pe-10" placeholder="جست‌وجو در مقالات…" autocomplete="off">
+            <button type="button" id="search-clear" class="absolute top-1/2 -translate-y-1/2 end-3 text-muted hover:text-ink p-1 hidden" aria-label="پاک کردن جست‌وجو">
+              <i class="fa-solid fa-xmark" aria-hidden="true"></i>
+            </button>
           </div>
           <div class="flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-between">
             <div id="article-filters" class="flex flex-wrap gap-2" role="group" aria-label="فیلتر بر اساس دسته‌بندی"></div>
