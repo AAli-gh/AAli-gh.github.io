@@ -12,7 +12,7 @@
   /* ----- Listing page ----- */
   var grid = $("#articles-grid");
   if (grid) {
-    var bar = $("#article-filters"), search = $("#article-search"), count = $("#articles-count"), empty = $("#articles-empty");
+    var bar = $("#article-filters"), search = $("#article-search"), count = $("#articles-count"), empty = $("#articles-empty"), resetBtn = $("#articles-reset");
     var cats = ["همه"].concat(S.articleCategories || []);
     var current = "همه", q = "";
 
@@ -43,6 +43,19 @@
     });
     var t;
     search.addEventListener("input", function () { clearTimeout(t); t = setTimeout(function () { q = search.value; render(); }, 120); });
+
+    if (resetBtn) {
+      resetBtn.addEventListener("click", function () {
+        current = "همه";
+        q = "";
+        search.value = "";
+        bar.querySelectorAll(".filter").forEach(function (x) {
+          x.setAttribute("aria-pressed", String(x.getAttribute("data-cat") === "همه"));
+        });
+        render();
+        search.focus();
+      });
+    }
 
     // support deep links like articles.html?cat=Python
     var preset = new URLSearchParams(location.search).get("cat");
