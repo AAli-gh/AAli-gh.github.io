@@ -13,6 +13,7 @@
   var grid = $("#articles-grid");
   if (grid) {
     var bar = $("#article-filters"), search = $("#article-search"), count = $("#articles-count"), empty = $("#articles-empty");
+    var clearBtn = $("#article-search-clear"), shortcutKbd = $("#article-search-shortcut");
     var cats = ["همه"].concat(S.articleCategories || []);
     var current = "همه", q = "";
 
@@ -20,6 +21,12 @@
       return '<button type="button" class="filter" data-cat="' + UI.esc(c) + '" aria-pressed="' + (c === current) + '"' +
         (c === "همه" ? "" : ' dir="auto"') + ">" + UI.esc(c) + "</button>";
     }).join("");
+
+    var syncSearchUI = function () {
+      var hasVal = Boolean(search && search.value);
+      if (clearBtn) clearBtn.hidden = !hasVal;
+      if (shortcutKbd) shortcutKbd.hidden = hasVal;
+    };
 
     var render = function () {
       var term = q.trim().toLowerCase();
@@ -32,6 +39,7 @@
       grid.querySelectorAll(".reveal").forEach(function (el) { el.classList.remove("reveal"); el.classList.add("fade-in"); });
       count.textContent = UI.faNum(list.length) + " مقاله";
       empty.hidden = list.length > 0;
+      syncSearchUI();
     };
 
     bar.addEventListener("click", function (e) {
@@ -43,6 +51,33 @@
     });
     var t;
     search.addEventListener("input", function () { clearTimeout(t); t = setTimeout(function () { q = search.value; render(); }, 120); });
+
+    if (clearBtn) {
+      clearBtn.addEventListener("click", function () {
+        search.value = "";
+        q = "";
+        render();
+        search.focus();
+      });
+    }
+
+    document.addEventListener("keydown", function (e) {
+      var tag = (document.activeElement && document.activeElement.tagName) || "";
+      var isInput = tag === "INPUT" || tag === "TEXTAREA" || (document.activeElement && document.activeElement.isContentEditable);
+      if (e.key === "/" && !isInput) {
+        e.preventDefault();
+        search.focus();
+        search.select();
+      } else if (e.key === "Escape" && document.activeElement === search) {
+        if (search.value) {
+          search.value = "";
+          q = "";
+          render();
+        } else {
+          search.blur();
+        }
+      }
+    });
 
     // support deep links like articles.html?cat=Python
     var preset = new URLSearchParams(location.search).get("cat");
