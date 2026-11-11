@@ -44,6 +44,20 @@
     var t;
     search.addEventListener("input", function () { clearTimeout(t); t = setTimeout(function () { q = search.value; render(); }, 120); });
 
+    var resetBtn = empty ? empty.querySelector('[data-action="reset-filters"]') : null;
+    if (resetBtn) {
+      resetBtn.addEventListener("click", function () {
+        search.value = "";
+        q = "";
+        current = "همه";
+        bar.querySelectorAll(".filter").forEach(function (x) {
+          x.setAttribute("aria-pressed", String(x.getAttribute("data-cat") === "همه"));
+        });
+        render();
+        search.focus();
+      });
+    }
+
     // support deep links like articles.html?cat=Python
     var preset = new URLSearchParams(location.search).get("cat");
     if (preset && cats.indexOf(preset) > -1) {
