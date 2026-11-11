@@ -51,7 +51,16 @@
           </div>
         </div>
         <div id="articles-grid" class="grid gap-6 md:grid-cols-2 lg:grid-cols-3"></div>
-        <p id="articles-empty" class="text-center text-muted py-16" hidden>مقاله‌ای با این مشخصات پیدا نشد.</p>
+        <div id="articles-empty" class="text-center py-16 max-w-md mx-auto" hidden>
+          <div class="ex-icon mx-auto !w-12 !h-12 !text-lg mb-3">
+            <i class="fa-solid fa-magnifying-glass" aria-hidden="true"></i>
+          </div>
+          <p class="font-semibold text-ink">مقاله‌ای با این مشخصات پیدا نشد</p>
+          <p class="text-sm text-muted mt-1">عبارت جست‌وجو را تغییر دهید یا فیلترها را بازنشانی کنید.</p>
+          <button type="button" class="btn btn-ghost btn-sm mt-4" data-action="reset-filters">
+            <i class="fa-solid fa-rotate-right" aria-hidden="true"></i> پاک کردن فیلترها
+          </button>
+        </div>
       </div>
     </section>
   </main>
